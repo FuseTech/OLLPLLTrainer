@@ -13,6 +13,8 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *testView;
+@property (weak, nonatomic) IBOutlet UIView *averageColorView;
+@property (weak, nonatomic) IBOutlet UIView *topLeftView;
 
 @end
 
@@ -48,7 +50,22 @@
     self.testView.backgroundColor = color;
     
 }
+-(void)centerColor:(UIColor *)color {
+    self.averageColorView.backgroundColor = color;
+    CGFloat red = 0.0, green = 0.0, blue = 0.0, alpha = 0.0;
+    if ([color respondsToSelector:@selector(getRed:green:blue:alpha:)]) {
+        [color getRed:&red green:&green blue:&blue alpha:&alpha];
+        red = red * 255;
+        green = green *255;
+        blue = blue *255;
+    }
+    NSLog(@"%f %f %f", red, green, blue);
+}
 
+-(void)topLeftColor:(UIColor *)color {
+    self.topLeftView.backgroundColor = color;
+    
+}
 
 
 @end

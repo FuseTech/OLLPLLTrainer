@@ -27,13 +27,260 @@
 	UITouch* touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self]; //where image was tapped
     NSLog(@"%f is x, %f is y", point.x, point.y);
-	self.lastColor = [self getPixelColorAtLocation:point]; 
+	self.lastColor = [self getPixelColorAtLocation:point];
+    self.centerColor = [self determineColorWithOriginPoint:CGPointMake(143,211)];    //self.topLeftColor = [self getTopLeftColor];
+    self.topLeftColor = [self determineColorWithOriginPoint:CGPointMake(66,144)];
 	NSLog(@"color %@",lastColor);
 	[pickedColorDelegate pickedColor:(UIColor*)self.lastColor];
+    [pickedColorDelegate centerColor:(UIColor*)self.centerColor];
+    [pickedColorDelegate topLeftColor:(UIColor*)self.topLeftColor];
+}
+-(UIColor *)getCenterColor {
+    UIColor* color = nil;
+	CGImageRef inImage = self.image.CGImage;
+    CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
+    if (cgctx == NULL) { return nil; /* error */ }
+	
+    size_t w = CGImageGetWidth(inImage);
+	size_t h = CGImageGetHeight(inImage);
+	CGRect rect = {{0,0},{w,h}};
+    //origin 143,211
+    //57 x
+    //57
+    
+    CGContextDrawImage(cgctx, rect, inImage);
+    unsigned char* data = CGBitmapContextGetData (cgctx);
+    int averageRed;
+    int averageGreen;
+    int averageBlue;
+    int averageAlpha;
+    
+    if (data != NULL) {
+		//offset locates the pixel in the data from x,y.
+		//4 for 4 bytes of data per pixel, w is width of one row of data.
+        CGPoint point = CGPointMake(143, 211);
+        NSMutableArray *redArray = [[NSMutableArray alloc] init];
+        NSMutableArray *greenArray = [[NSMutableArray alloc] init];
+        NSMutableArray *blueArray = [[NSMutableArray alloc] init];
+        NSMutableArray *alphaArray = [[NSMutableArray alloc] init];
+        
+        
+        //Take 30 samples of the RGB in this square
+        for(int i =0; i < 30; i++) {
+            int offset = 8*((w*round(point.y+i))+round(point.x+i));
+
+            
+            NSNumber *redNumber = [NSNumber numberWithInt:data[offset+1]];
+            [redArray addObject:redNumber];
+            NSNumber *greenNumber = [NSNumber numberWithInt:data[offset + 2]];
+            [greenArray addObject:greenNumber];
+            NSNumber *blueNumber = [NSNumber numberWithInt:data[offset + 3]];
+            [blueArray addObject:blueNumber];
+            NSNumber *alphaNumber = [NSNumber numberWithInt:data[offset]];
+            [alphaArray addObject:alphaNumber];
+            
+            
+         }
+		//NSLog(@"offset: %i colors: RGB A %i %i %i  %i",offset,red,green,blue,alpha);
+		//color = [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:(blue/255.0f) alpha:(alpha/255.0f)];
+       
+        for (int i = 0; i < 30; i++) {
+            static int totalRed;
+            NSNumber *redTemp = [redArray objectAtIndex:i];
+            totalRed += [redTemp integerValue];
+            averageRed = totalRed/30;
+            
+            
+            static int totalGreen;
+            NSNumber *greenTemp = [greenArray objectAtIndex:i];
+            totalGreen += [greenTemp integerValue];
+            averageGreen = totalGreen/30;
+            
+            static int totalBlue;
+            NSNumber *blueTemp = [blueArray objectAtIndex:i];
+            totalBlue += [blueTemp integerValue];
+            averageBlue = totalBlue/30;
+            
+            static int totalAlpha;
+            NSNumber *alphaTemp = [alphaArray objectAtIndex:i];
+            totalAlpha += [alphaTemp integerValue];
+            averageAlpha = totalAlpha/30;
+        
+            
+            
+        }
+        
+	} else {
+        return nil;
+    }
+    color = [UIColor colorWithRed:(averageRed/255.0f) green:(averageGreen/255.0f) blue:(averageBlue/255.0f) alpha:(averageAlpha/255.0f)];
+    return color;
+}
+
+-(UIColor *)getTopLeftColor {
+    UIColor* color = nil;
+	CGImageRef inImage = self.image.CGImage;
+    CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
+    if (cgctx == NULL) { return nil; /* error */ }
+	
+    size_t w = CGImageGetWidth(inImage);
+	size_t h = CGImageGetHeight(inImage);
+	CGRect rect = {{0,0},{w,h}};
+    //66 140
+    //57 x
+    //57
+    
+    CGContextDrawImage(cgctx, rect, inImage);
+    unsigned char* data = CGBitmapContextGetData (cgctx);
+    int averageRed;
+    int averageGreen;
+    int averageBlue;
+    int averageAlpha;
+    
+    if (data != NULL) {
+		//offset locates the pixel in the data from x,y.
+		//4 for 4 bytes of data per pixel, w is width of one row of data.
+        CGPoint point = CGPointMake(66, 140);
+        NSMutableArray *redArray = [[NSMutableArray alloc] init];
+        NSMutableArray *greenArray = [[NSMutableArray alloc] init];
+        NSMutableArray *blueArray = [[NSMutableArray alloc] init];
+        NSMutableArray *alphaArray = [[NSMutableArray alloc] init];
+        
+        
+        //Take 30 samples of the RGB in this square
+        for(int i =0; i < 30; i++) {
+            int offset = 8*((w*round(point.y+i))+round(point.x+i));
+            
+            
+            NSNumber *redNumber = [NSNumber numberWithInt:data[offset+1]];
+            [redArray addObject:redNumber];
+            NSNumber *greenNumber = [NSNumber numberWithInt:data[offset + 2]];
+            [greenArray addObject:greenNumber];
+            NSNumber *blueNumber = [NSNumber numberWithInt:data[offset + 3]];
+            [blueArray addObject:blueNumber];
+            NSNumber *alphaNumber = [NSNumber numberWithInt:data[offset]];
+            [alphaArray addObject:alphaNumber];
+            
+            
+        }
+		//NSLog(@"offset: %i colors: RGB A %i %i %i  %i",offset,red,green,blue,alpha);
+		//color = [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:(blue/255.0f) alpha:(alpha/255.0f)];
+        
+        for (int i = 0; i < 30; i++) {
+            static int totalRed;
+            NSNumber *redTemp = [redArray objectAtIndex:i];
+            totalRed += [redTemp integerValue];
+            averageRed = totalRed/30;
+            
+            
+            static int totalGreen;
+            NSNumber *greenTemp = [greenArray objectAtIndex:i];
+            totalGreen += [greenTemp integerValue];
+            averageGreen = totalGreen/30;
+            
+            static int totalBlue;
+            NSNumber *blueTemp = [blueArray objectAtIndex:i];
+            totalBlue += [blueTemp integerValue];
+            averageBlue = totalBlue/30;
+            
+            static int totalAlpha;
+            NSNumber *alphaTemp = [alphaArray objectAtIndex:i];
+            totalAlpha += [alphaTemp integerValue];
+            averageAlpha = totalAlpha/30;
+            
+            
+            
+        }
+        
+	} else {
+        return nil;
+    }
+    color = [UIColor colorWithRed:(averageRed/255.0f) green:(averageGreen/255.0f) blue:(averageBlue/255.0f) alpha:(averageAlpha/255.0f)];
+    return color;
+}
+
+-(UIColor *)determineColorWithOriginPoint:(CGPoint)point {
+    UIColor* color = nil;
+	CGImageRef inImage = self.image.CGImage;
+    CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
+    if (cgctx == NULL) { return nil; /* error */ }
+	
+    size_t w = CGImageGetWidth(inImage);
+	size_t h = CGImageGetHeight(inImage);
+	CGRect rect = {{0,0},{w,h}};
+    //66 140
+    //57 x
+    //57
+    
+    CGContextDrawImage(cgctx, rect, inImage);
+    unsigned char* data = CGBitmapContextGetData (cgctx);
+    int averageRed;
+    int averageGreen;
+    int averageBlue;
+    int averageAlpha;
+    
+    if (data != NULL) {
+
+        NSMutableArray *redArray = [[NSMutableArray alloc] init];
+        NSMutableArray *greenArray = [[NSMutableArray alloc] init];
+        NSMutableArray *blueArray = [[NSMutableArray alloc] init];
+        NSMutableArray *alphaArray = [[NSMutableArray alloc] init];
+        
+        
+        //Take 30 samples of the RGB in this square
+        for(int i =0; i < 30; i++) {
+            int offset = 8*((w*round(point.y+i))+round(point.x+i));
+            
+            
+            NSNumber *redNumber = [NSNumber numberWithInt:data[offset+1]];
+            [redArray addObject:redNumber];
+            NSNumber *greenNumber = [NSNumber numberWithInt:data[offset + 2]];
+            [greenArray addObject:greenNumber];
+            NSNumber *blueNumber = [NSNumber numberWithInt:data[offset + 3]];
+            [blueArray addObject:blueNumber];
+            NSNumber *alphaNumber = [NSNumber numberWithInt:data[offset]];
+            [alphaArray addObject:alphaNumber];
+            
+            
+        }
+		//NSLog(@"offset: %i colors: RGB A %i %i %i  %i",offset,red,green,blue,alpha);
+		//color = [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:(blue/255.0f) alpha:(alpha/255.0f)];
+        
+        for (int i = 0; i < 30; i++) {
+            static int totalRed;
+            NSNumber *redTemp = [redArray objectAtIndex:i];
+            totalRed += [redTemp integerValue];
+            averageRed = totalRed/30;
+            
+            
+            static int totalGreen;
+            NSNumber *greenTemp = [greenArray objectAtIndex:i];
+            totalGreen += [greenTemp integerValue];
+            averageGreen = totalGreen/30;
+            
+            static int totalBlue;
+            NSNumber *blueTemp = [blueArray objectAtIndex:i];
+            totalBlue += [blueTemp integerValue];
+            averageBlue = totalBlue/30;
+            
+            static int totalAlpha;
+            NSNumber *alphaTemp = [alphaArray objectAtIndex:i];
+            totalAlpha += [alphaTemp integerValue];
+            averageAlpha = totalAlpha/30;
+            
+            
+            
+        }
+        
+	} else {
+        return nil;
+    }
+    color = [UIColor colorWithRed:(averageRed/255.0f) green:(averageGreen/255.0f) blue:(averageBlue/255.0f) alpha:(averageAlpha/255.0f)];
+    return color;
 }
 
 
-- (UIColor*) getPixelColorAtLocation:(CGPoint)point {
+- (UIColor*) getPixelColorAtLocation:(CGPoint)point{
 	UIColor* color = nil;
 	CGImageRef inImage = self.image.CGImage;
 	// Create off screen bitmap context to draw the image into. Format ARGB is 4 bytes for each pixel: Alpa, Red, Green, Blue
@@ -55,6 +302,7 @@
 	if (data != NULL) {
 		//offset locates the pixel in the data from x,y. 
 		//4 for 4 bytes of data per pixel, w is width of one row of data.
+        
 		int offset = 8*((w*round(point.y))+round(point.x));
 		int alpha =  data[offset]; 
 		int red = data[offset+1]; 

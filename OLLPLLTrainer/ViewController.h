@@ -18,5 +18,7 @@
 @property (nonatomic, retain) ColorPickerImageView* cubeImage;
 
 - (void) pickedColor:(UIColor*)color;
+-(void)centerColor:(UIColor*)color;
+-(void)topLeftColor:(UIColor *)color;
 
 @end
