@@ -13,13 +13,15 @@
 @interface ColorPickerImageView : UIImageView {
 	UIColor* lastColor;
 	id pickedColorDelegate;
+    
 }
 
 @property (nonatomic, retain) UIColor* lastColor;
 @property (nonatomic, retain) id pickedColorDelegate;
+@property (nonatomic) UIColor *centerColor;
+@property (nonatomic) UIColor *topLeftColor;
 
 
-- (UIColor*) getPixelColorAtLocation:(CGPoint)point;
 - (CGContextRef) createARGBBitmapContextFromImage:(CGImageRef)inImage;
 
 

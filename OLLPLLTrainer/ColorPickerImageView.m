@@ -27,51 +27,230 @@
 	UITouch* touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self]; //where image was tapped
     NSLog(@"%f is x, %f is y", point.x, point.y);
-	self.lastColor = [self getPixelColorAtLocation:point]; 
-	NSLog(@"color %@",lastColor);
+	
+ 
+    // bottom right
+    [self compareCenterColorWithColorAtOriginPoint:CGPointMake(222,291)];
+    // bottom center
+   // [self compareCenterColorWithColorAtOriginPoint:CGPointMake(143, 288)];
+    // bottom left
+   // [self compareCenterColorWithColorAtOriginPoint:CGPointMake(66, 289)];
+    // center right
+    [self compareCenterColorWithColorAtOriginPoint:CGPointMake(219, 215)];
+	
 	[pickedColorDelegate pickedColor:(UIColor*)self.lastColor];
+    [pickedColorDelegate centerColor:(UIColor*)self.centerColor];
+  //  [pickedColorDelegate topLeftColor:(UIColor*)self.topLeftColor];
 }
-
-
-- (UIColor*) getPixelColorAtLocation:(CGPoint)point {
-	UIColor* color = nil;
+-(UIColor *)getCenterColor {
+    UIColor* color = nil;
 	CGImageRef inImage = self.image.CGImage;
-	// Create off screen bitmap context to draw the image into. Format ARGB is 4 bytes for each pixel: Alpa, Red, Green, Blue
-	CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
-	if (cgctx == NULL) { return nil; /* error */ }
+    CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
+    if (cgctx == NULL) { return nil; /* error */ }
 	
     size_t w = CGImageGetWidth(inImage);
 	size_t h = CGImageGetHeight(inImage);
-	CGRect rect = {{0,0},{w,h}}; 
-	
-	// Draw the image to the bitmap context. Once we draw, the memory 
-	// allocated for the context for rendering will then contain the 
-	// raw image data in the specified color space.
-	CGContextDrawImage(cgctx, rect, inImage); 
-	
-	// Now we can get a pointer to the image data associated with the bitmap
-	// context.
-	unsigned char* data = CGBitmapContextGetData (cgctx);
-	if (data != NULL) {
-		//offset locates the pixel in the data from x,y. 
-		//4 for 4 bytes of data per pixel, w is width of one row of data.
-		int offset = 8*((w*round(point.y))+round(point.x));
-		int alpha =  data[offset]; 
-		int red = data[offset+1]; 
-		int green = data[offset+2]; 
-		int blue = data[offset+3]; 
-		NSLog(@"offset: %i colors: RGB A %i %i %i  %i",offset,red,green,blue,alpha);
-		color = [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:(blue/255.0f) alpha:(alpha/255.0f)];
-	}
-	
-	// When finished, release the context
-	CGContextRelease(cgctx); 
-	// Free image data memory for the context
-	if (data) { free(data); }
-	
-	return color;
+	CGRect rect = {{0,0},{w,h}};
+ 
+    CGContextDrawImage(cgctx, rect, inImage);
+    unsigned char* data = CGBitmapContextGetData (cgctx);
+    int averageRed;
+    int averageGreen;
+    int averageBlue;
+    int averageAlpha;
+    
+    if (data != NULL) {
+
+        CGPoint point = CGPointMake(143, 211);
+        NSMutableArray *redArray = [[NSMutableArray alloc] init];
+        NSMutableArray *greenArray = [[NSMutableArray alloc] init];
+        NSMutableArray *blueArray = [[NSMutableArray alloc] init];
+        NSMutableArray *alphaArray = [[NSMutableArray alloc] init];
+        
+        
+        //Take 30 samples of the RGB in this square
+        for(int i =0; i < 30; i++) {
+            int offset = 8*((w*round(point.y+i))+round(point.x+i));
+
+            
+            NSNumber *redNumber = [NSNumber numberWithInt:data[offset+1]];
+            [redArray addObject:redNumber];
+            NSNumber *greenNumber = [NSNumber numberWithInt:data[offset + 2]];
+            [greenArray addObject:greenNumber];
+            NSNumber *blueNumber = [NSNumber numberWithInt:data[offset + 3]];
+            [blueArray addObject:blueNumber];
+            NSNumber *alphaNumber = [NSNumber numberWithInt:data[offset]];
+            [alphaArray addObject:alphaNumber];
+            
+            
+         }
+		int totalRed =0;
+        int totalGreen=0;
+        int totalBlue=0;
+        int totalAlpha=0;
+       
+        for (int i = 0; i < 30; i++) {
+           
+            NSNumber *redTemp = [redArray objectAtIndex:i];
+            totalRed += [redTemp integerValue];
+            averageRed = totalRed/30;
+            
+      
+            NSNumber *greenTemp = [greenArray objectAtIndex:i];
+            totalGreen += [greenTemp integerValue];
+            averageGreen = totalGreen/30;
+            
+         
+            NSNumber *blueTemp = [blueArray objectAtIndex:i];
+            totalBlue += [blueTemp integerValue];
+            averageBlue = totalBlue/30;
+            
+        
+            NSNumber *alphaTemp = [alphaArray objectAtIndex:i];
+            totalAlpha += [alphaTemp integerValue];
+            averageAlpha = totalAlpha/30;
+        
+            
+            
+        }
+        
+	} else {
+        return nil;
+    }
+    color = [UIColor colorWithRed:(averageRed/255.0f) green:(averageGreen/255.0f) blue:(averageBlue/255.0f) alpha:(averageAlpha/255.0f)];
+    return color;
 }
 
+
+
+-(UIColor *)determineColorWithOriginPoint:(CGPoint)point {
+    UIColor* color = nil;
+	CGImageRef inImage = self.image.CGImage;
+    CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
+    if (cgctx == NULL) { return nil; /* error */ }
+	
+    size_t w = CGImageGetWidth(inImage);
+	size_t h = CGImageGetHeight(inImage);
+	CGRect rect = {{0,0},{w,h}};
+    
+    CGContextDrawImage(cgctx, rect, inImage);
+    unsigned char* data = CGBitmapContextGetData (cgctx);
+    int averageRed;
+    int averageGreen;
+    int averageBlue;
+    int averageAlpha;
+    
+    if (data != NULL) {
+
+        NSMutableArray *redArray = [[NSMutableArray alloc] init];
+        NSMutableArray *greenArray = [[NSMutableArray alloc] init];
+        NSMutableArray *blueArray = [[NSMutableArray alloc] init];
+        NSMutableArray *alphaArray = [[NSMutableArray alloc] init];
+        
+        
+        //Take 30 samples of the RGB in this square
+        for(int i =0; i < 30; i++) {
+            int offset = 8*((w*round(point.y+i))+round(point.x+i));
+            
+            
+            NSNumber *redNumber = [NSNumber numberWithInt:data[offset+1]];
+            [redArray addObject:redNumber];
+            NSNumber *greenNumber = [NSNumber numberWithInt:data[offset + 2]];
+            [greenArray addObject:greenNumber];
+            NSNumber *blueNumber = [NSNumber numberWithInt:data[offset + 3]];
+            [blueArray addObject:blueNumber];
+            NSNumber *alphaNumber = [NSNumber numberWithInt:data[offset]];
+            [alphaArray addObject:alphaNumber];
+            
+            
+        }
+        int totalRed=0;
+        int totalGreen=0;
+        int totalBlue=0;
+        int totalAlpha=0;
+        
+        for (int i = 0; i < 30; i++) {
+           
+            NSNumber *redTemp = [redArray objectAtIndex:i];
+            totalRed += [redTemp integerValue];
+            averageRed = totalRed/30;
+            
+            
+            NSNumber *greenTemp = [greenArray objectAtIndex:i];
+            totalGreen += [greenTemp integerValue];
+            averageGreen = totalGreen/30;
+            
+     
+            NSNumber *blueTemp = [blueArray objectAtIndex:i];
+            totalBlue += [blueTemp integerValue];
+            averageBlue = totalBlue/30;
+            
+      
+            NSNumber *alphaTemp = [alphaArray objectAtIndex:i];
+            totalAlpha += [alphaTemp integerValue];
+            averageAlpha = totalAlpha/30;
+            
+            
+            
+        }
+        
+	} else {
+        return nil;
+    }
+   
+    color = [UIColor colorWithRed:(averageRed/255.0f) green:(averageGreen/255.0f) blue:(averageBlue/255.0f) alpha:(averageAlpha/255.0f)];
+    return color;
+}
+
+-(BOOL)compareCenterColorWithColorAtOriginPoint:(CGPoint)point {
+    UIColor *centerColor = [self getCenterColor];
+    UIColor *testColor = [self determineColorWithOriginPoint:point];
+    
+    CGFloat cred = 0.0, cgreen = 0.0, cblue = 0.0, calpha = 0.0;
+    [centerColor getRed:&cred green:&cgreen blue:&cblue alpha:&calpha];
+    cred = cred * 255;
+    cgreen = cgreen *255;
+    cblue = cblue *255;
+    
+    NSLog(@"%f %f %f are my center values", cred, cgreen, cblue);
+
+    
+    CGFloat tred = 0.0, tgreen = 0.0, tblue = 0.0, talpha = 0.0;
+    
+    [testColor getRed:&tred green:&tgreen blue:&tblue alpha:&talpha];
+    tred = tred * 255;
+    tgreen = tgreen *255;
+    tblue = tblue *255;
+    NSLog(@"%f %f %f are my test values", tred, tgreen, tblue);
+    
+    
+    BOOL redGood = NO;
+    BOOL greenGood = NO;
+    BOOL blueGood = NO;
+    
+    if (tred < cred +20 && tred > cred -20) {
+       
+        redGood = YES;
+    }
+    if (tgreen < cgreen +20 && tgreen > cgreen -20) {
+       
+        greenGood = YES;
+    }
+    
+    if (tblue < cblue + 20 && tblue > cblue - 20) {
+      
+        blueGood = YES;
+    }
+    if (redGood && greenGood && blueGood) {
+        NSLog(@"This should be the same color as center");
+        return YES;
+    } else {
+        NSLog(@"Not the same color");
+        return NO;
+        
+    }
+    
+}
 
 
 - (CGContextRef) createARGBBitmapContextFromImage:(CGImageRef) inImage {
