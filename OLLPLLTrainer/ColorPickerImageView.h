@@ -22,7 +22,6 @@
 @property (nonatomic) UIColor *topLeftColor;
 
 
-- (UIColor*) getPixelColorAtLocation:(CGPoint)point;
 - (CGContextRef) createARGBBitmapContextFromImage:(CGImageRef)inImage;
 
 
