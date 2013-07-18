@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1E2F4B1796572B006B7A7A /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E2F4A1796572B006B7A7A /* OverlayView.m */; };
+		4C1E2F4D1796576D006B7A7A /* overlaygraphic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E2F4C1796576D006B7A7A /* overlaygraphic.png */; };
+		4C1E2F5017965D1B006B7A7A /* ColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E2F4F17965D1B006B7A7A /* ColorPickerImageView.m */; };
+		4C1E2F5217965E7A006B7A7A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1E2F5117965E7A006B7A7A /* QuartzCore.framework */; };
+		4C1E2F5417965FFE006B7A7A /* 4729020a-7593-4986-bd50-4dbb2e8338d0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E2F5317965FFE006B7A7A /* 4729020a-7593-4986-bd50-4dbb2e8338d0.jpeg */; };
+		4C7CE8D317978785007E4C27 /* fishFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7CE8D217978785007E4C27 /* fishFace.png */; };
 		4C824F4917964F5800C73849 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C824F4817964F5800C73849 /* Foundation.framework */; };
 		4C824F4B17964F5800C73849 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C824F4A17964F5800C73849 /* CoreGraphics.framework */; };
 		4C824F4D17964F5800C73849 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C824F4C17964F5800C73849 /* UIKit.framework */; };
@@ -34,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C1E2F491796572B006B7A7A /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
+		4C1E2F4A1796572B006B7A7A /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
+		4C1E2F4C1796576D006B7A7A /* overlaygraphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlaygraphic.png; sourceTree = "<group>"; };
+		4C1E2F4E17965D1B006B7A7A /* ColorPickerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerImageView.h; sourceTree = "<group>"; };
+		4C1E2F4F17965D1B006B7A7A /* ColorPickerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerImageView.m; sourceTree = "<group>"; };
+		4C1E2F5117965E7A006B7A7A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4C1E2F5317965FFE006B7A7A /* 4729020a-7593-4986-bd50-4dbb2e8338d0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "4729020a-7593-4986-bd50-4dbb2e8338d0.jpeg"; sourceTree = "<group>"; };
+		4C7CE8D217978785007E4C27 /* fishFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fishFace.png; sourceTree = "<group>"; };
 		4C824F4517964F5800C73849 /* OLLPLLTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OLLPLLTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C824F4817964F5800C73849 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C824F4A17964F5800C73849 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1E2F5217965E7A006B7A7A /* QuartzCore.framework in Frameworks */,
 				4C824F4B17964F5800C73849 /* CoreGraphics.framework in Frameworks */,
 				4C824F4D17964F5800C73849 /* UIKit.framework in Frameworks */,
 				4C824F4917964F5800C73849 /* Foundation.framework in Frameworks */,
@@ -101,6 +116,7 @@
 		4C824F4717964F5800C73849 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C1E2F5117965E7A006B7A7A /* QuartzCore.framework */,
 				4C824F4817964F5800C73849 /* Foundation.framework */,
 				4C824F4A17964F5800C73849 /* CoreGraphics.framework */,
 				4C824F4C17964F5800C73849 /* UIKit.framework */,
@@ -117,6 +133,10 @@
 				4C824F5A17964F5800C73849 /* Main.storyboard */,
 				4C824F5D17964F5800C73849 /* ViewController.h */,
 				4C824F5E17964F5800C73849 /* ViewController.m */,
+				4C1E2F4E17965D1B006B7A7A /* ColorPickerImageView.h */,
+				4C1E2F4F17965D1B006B7A7A /* ColorPickerImageView.m */,
+				4C1E2F491796572B006B7A7A /* OverlayView.h */,
+				4C1E2F4A1796572B006B7A7A /* OverlayView.m */,
 				4C824F6017964F5800C73849 /* Images.xcassets */,
 				4C824F4F17964F5800C73849 /* Supporting Files */,
 			);
@@ -126,8 +146,11 @@
 		4C824F4F17964F5800C73849 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C7CE8D217978785007E4C27 /* fishFace.png */,
+				4C1E2F4C1796576D006B7A7A /* overlaygraphic.png */,
 				4C824F5017964F5800C73849 /* OLLPLLTrainer-Info.plist */,
 				4C824F5117964F5800C73849 /* InfoPlist.strings */,
+				4C1E2F5317965FFE006B7A7A /* 4729020a-7593-4986-bd50-4dbb2e8338d0.jpeg */,
 				4C824F5417964F5800C73849 /* main.m */,
 				4C824F5617964F5800C73849 /* OLLPLLTrainer-Prefix.pch */,
 			);
@@ -228,7 +251,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7CE8D317978785007E4C27 /* fishFace.png in Resources */,
 				4C824F6117964F5800C73849 /* Images.xcassets in Resources */,
+				4C1E2F4D1796576D006B7A7A /* overlaygraphic.png in Resources */,
+				4C1E2F5417965FFE006B7A7A /* 4729020a-7593-4986-bd50-4dbb2e8338d0.jpeg in Resources */,
 				4C824F5317964F5800C73849 /* InfoPlist.strings in Resources */,
 				4C824F5C17964F5800C73849 /* Main.storyboard in Resources */,
 			);
@@ -250,7 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C824F5F17964F5800C73849 /* ViewController.m in Sources */,
+				4C1E2F4B1796572B006B7A7A /* OverlayView.m in Sources */,
 				4C824F5917964F5800C73849 /* AppDelegate.m in Sources */,
+				4C1E2F5017965D1B006B7A7A /* ColorPickerImageView.m in Sources */,
 				4C824F5517964F5800C73849 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -363,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -377,6 +405,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OLLPLLTrainer/OLLPLLTrainer-Prefix.pch";
 				INFOPLIST_FILE = "OLLPLLTrainer/OLLPLLTrainer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -390,6 +419,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OLLPLLTrainer/OLLPLLTrainer-Prefix.pch";
 				INFOPLIST_FILE = "OLLPLLTrainer/OLLPLLTrainer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -454,6 +484,7 @@
 				4C824F7917964F5800C73849 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C824F7A17964F5800C73849 /* Build configuration list for PBXNativeTarget "OLLPLLTrainerTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +493,7 @@
 				4C824F7C17964F5800C73849 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

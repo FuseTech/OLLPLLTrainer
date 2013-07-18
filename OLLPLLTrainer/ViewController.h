@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ColorPickerImageView;
 
-@interface ViewController : UIViewController
+
+@interface ViewController : UIViewController {
+    IBOutlet ColorPickerImageView* _cubeImage;
+}
+
+
+@property (nonatomic, retain) ColorPickerImageView* cubeImage;
+
+- (void) pickedColor:(UIColor*)color;
 
 @end
