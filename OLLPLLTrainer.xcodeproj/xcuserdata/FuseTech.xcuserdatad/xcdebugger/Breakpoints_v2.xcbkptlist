@@ -41,12 +41,12 @@
                   symbolName = "-[ColorPickerImageView compareCenterColorWithColorAtOriginPoint:]"
                   moduleName = "OLLPLLTrainer"
                   urlString = "file://localhost/Users/FuseTech/Development/OLLPLLTrainer/OLLPLLTrainer/ColorPickerImageView.m"
-                  timestampString = "395816655.158329"
+                  timestampString = "395906200.424438"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "245"
-                  endingLineNumber = "245"
-                  offsetFromSymbolStart = "912">
+                  startingLineNumber = "249"
+                  endingLineNumber = "249"
+                  offsetFromSymbolStart = "832">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -55,12 +55,12 @@
                   symbolName = "-[ColorPickerImageView compareCenterColorWithColorAtOriginPoint:]"
                   moduleName = "OLLPLLTrainer"
                   urlString = "file://localhost/Users/FuseTech/Development/OLLPLLTrainer/OLLPLLTrainer/ColorPickerImageView.m"
-                  timestampString = "395816655.158755"
+                  timestampString = "395906200.424813"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "245"
-                  endingLineNumber = "245"
-                  offsetFromSymbolStart = "977">
+                  startingLineNumber = "249"
+                  endingLineNumber = "249"
+                  offsetFromSymbolStart = "866">
                </Location>
             </Locations>
          </BreakpointContent>
