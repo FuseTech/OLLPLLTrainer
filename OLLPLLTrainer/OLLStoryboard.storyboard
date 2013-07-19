@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3697.3"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="KQh-2B-rzl">
             <objects>
-                <viewController storyboardIdentifier="InitialView" id="5ad-j1-FPx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InitialView" id="5ad-j1-FPx" customClass="CameraViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rxC-r3-RtV"/>
                         <viewControllerLayoutGuide type="bottom" id="zf0-ob-QEe"/>
@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="650" y="-483"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="c2L-8b-Dpe">
             <objects>
-                <viewController id="0ym-Sx-ZXh" sceneMemberID="viewController">
+                <viewController id="0ym-Sx-ZXh" customClass="OLLDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jmz-2e-yrY"/>
                         <viewControllerLayoutGuide type="bottom" id="aAp-GU-sze"/>
@@ -67,12 +67,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKQ-PP-CLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1133" y="-799"/>
+            <point key="canvasLocation" x="1147" y="-483"/>
         </scene>
-        <!--View Controller-->
+        <!--Walkthrough View Controller-->
         <scene sceneID="SKU-aw-RGh">
             <objects>
-                <viewController id="FyH-AZ-DVC" sceneMemberID="viewController">
+                <viewController id="FyH-AZ-DVC" customClass="WalkthroughViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VbC-wN-9oC"/>
                         <viewControllerLayoutGuide type="bottom" id="lE1-W3-Tts"/>
@@ -93,12 +93,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMF-UP-d65" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1684" y="-367"/>
+            <point key="canvasLocation" x="1664" y="-483"/>
         </scene>
-        <!--View Controller-->
+        <!--Debrief View Controller-->
         <scene sceneID="CYu-Mj-rJh">
             <objects>
-                <viewController id="pS3-ml-JB8" sceneMemberID="viewController">
+                <viewController id="pS3-ml-JB8" customClass="DebriefViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jww-RQ-wLb"/>
                         <viewControllerLayoutGuide type="bottom" id="teB-at-YD4"/>
@@ -119,50 +119,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJs-0s-npg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2262" y="-350"/>
+            <point key="canvasLocation" x="2130" y="-483"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="2BF-ze-uc8">
-            <objects>
-                <viewController id="MqZ-cK-zry" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Rrn-u1-SSW"/>
-                        <viewControllerLayoutGuide type="bottom" id="iDf-31-71w"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hNc-B4-cwA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repeat OLL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvX-Wz-wUE">
-                                <rect key="frame" x="133" y="163" width="92" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHL-PC-GpY">
-                                <rect key="frame" x="124" y="416" width="73" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Ready">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bBr-OI-yaa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1133" y="-107"/>
-        </scene>
-        <!--View Controller-->
+        <!--Stats View Controller-->
         <scene sceneID="RuW-gB-e9H">
             <objects>
-                <viewController id="pQY-AG-G0x" sceneMemberID="viewController">
+                <viewController id="pQY-AG-G0x" customClass="OLLStatsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ldg-ZR-Xt5"/>
                         <viewControllerLayoutGuide type="bottom" id="bWC-gY-OQC"/>
@@ -183,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jki-Bn-81V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1133" y="602"/>
+            <point key="canvasLocation" x="1147" y="278"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.90565146169999999" green="0.47312878019999999" blue="0.13857736900000001" alpha="1" colorSpace="calibratedRGB"/>

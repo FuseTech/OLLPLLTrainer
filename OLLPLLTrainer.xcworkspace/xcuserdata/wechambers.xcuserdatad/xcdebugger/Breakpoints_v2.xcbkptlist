@@ -121,11 +121,11 @@
                   symbolName = "-[ViewController checkColorWithOriginPoint:onFace:]"
                   moduleName = "OLLPLLTrainer"
                   urlString = "file://localhost/Users/wechambers/Development/Practice/OLLPLLTrainer/OLLPLLTrainer/ViewController.m"
-                  timestampString = "395945419.160224"
+                  timestampString = "395951144.402852"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "531"
-                  endingLineNumber = "531"
+                  startingLineNumber = "529"
+                  endingLineNumber = "529"
                   offsetFromSymbolStart = "876">
                </Location>
                <Location
@@ -135,11 +135,11 @@
                   symbolName = "-[ViewController checkColorWithOriginPoint:onFace:]"
                   moduleName = "OLLPLLTrainer"
                   urlString = "file://localhost/Users/wechambers/Development/Practice/OLLPLLTrainer/OLLPLLTrainer/ViewController.m"
-                  timestampString = "395945419.160435"
+                  timestampString = "395951144.403109"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "531"
-                  endingLineNumber = "531"
+                  startingLineNumber = "529"
+                  endingLineNumber = "529"
                   offsetFromSymbolStart = "922">
                </Location>
             </Locations>
