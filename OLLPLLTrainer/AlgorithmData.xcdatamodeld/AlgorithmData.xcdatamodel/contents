@@ -2,6 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3383" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="OLL" representedClassName="OLL" syncable="YES">
         <attribute name="algorithm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="binary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
@@ -35,9 +36,9 @@
         <relationship name="parentPLL" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PLL" inverseName="userPLLData" inverseEntity="PLL" syncable="YES"/>
     </entity>
     <elements>
-        <element name="OLL" positionX="-981" positionY="-702" width="128" height="118"/>
-        <element name="UserOLL" positionX="-729" positionY="-747" width="128" height="163"/>
+        <element name="OLL" positionX="-981" positionY="-711" width="128" height="133"/>
         <element name="PLL" positionX="-983" positionY="-496" width="128" height="118"/>
+        <element name="UserOLL" positionX="-729" positionY="-747" width="128" height="163"/>
         <element name="UserPLL" positionX="-722" positionY="-541" width="128" height="163"/>
     </elements>
 </model>
