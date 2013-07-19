@@ -18,9 +18,9 @@
         self.opaque = NO;
         self.backgroundColor = [UIColor clearColor];
         
-        UIImage *overlayGraphic = [UIImage imageNamed:@"overlaygraphic.png"];
+        UIImage *overlayGraphic = [UIImage imageNamed:@"cubeGuide.png"];
         UIImageView *overlayGraphicView = [[UIImageView alloc] initWithImage:overlayGraphic];
-        overlayGraphicView.frame = CGRectMake(60,200,120,60);
+        overlayGraphicView.frame = CGRectMake(50,130,220,220);
         [self addSubview:overlayGraphicView];
         
     }
