@@ -7,11 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36A2ED15179996D3004599CE /* yellowFace.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 36A2ED14179996D3004599CE /* yellowFace.jpeg */; };
+		36A2ED171799AE27004599CE /* OLLStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A2ED161799AE27004599CE /* OLLStoryboard.storyboard */; };
+		36A2ED191799AE36004599CE /* PLLStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A2ED181799AE35004599CE /* PLLStoryboard.storyboard */; };
+		36A2ED1E1799AF3D004599CE /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A2ED1D1799AF3D004599CE /* MainMenuViewController.m */; };
+		36A2ED221799B39A004599CE /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A2ED211799B39A004599CE /* CameraViewController.m */; };
 		4C1E2F4B1796572B006B7A7A /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E2F4A1796572B006B7A7A /* OverlayView.m */; };
-		4C1E2F4D1796576D006B7A7A /* overlaygraphic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E2F4C1796576D006B7A7A /* overlaygraphic.png */; };
-		4C1E2F5017965D1B006B7A7A /* ColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E2F4F17965D1B006B7A7A /* ColorPickerImageView.m */; };
 		4C1E2F5217965E7A006B7A7A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1E2F5117965E7A006B7A7A /* QuartzCore.framework */; };
-		4C1E2F5417965FFE006B7A7A /* 4729020a-7593-4986-bd50-4dbb2e8338d0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E2F5317965FFE006B7A7A /* 4729020a-7593-4986-bd50-4dbb2e8338d0.jpeg */; };
+		4C3ACC8C1798BF7E00772067 /* cubeGuide.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3ACC8B1798BF7E00772067 /* cubeGuide.png */; };
+		4C3ACC991798BFD300772067 /* StorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3ACC8D1798BFD300772067 /* StorageManager.m */; };
+		4C3ACC9A1798BFD300772067 /* AlgorithmData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C3ACC8F1798BFD300772067 /* AlgorithmData.xcdatamodeld */; };
+		4C3ACC9B1798BFD300772067 /* PLL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3ACC921798BFD300772067 /* PLL.m */; };
+		4C3ACC9C1798BFD300772067 /* UserPLL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3ACC941798BFD300772067 /* UserPLL.m */; };
+		4C3ACC9D1798BFD300772067 /* OLL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3ACC961798BFD300772067 /* OLL.m */; };
+		4C3ACC9E1798BFD300772067 /* UserOLL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3ACC981798BFD300772067 /* UserOLL.m */; };
+		4C3ACCA11798C05900772067 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3ACCA01798C05900772067 /* CoreData.framework */; };
 		4C7CE8D317978785007E4C27 /* fishFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7CE8D217978785007E4C27 /* fishFace.png */; };
 		4C824F4917964F5800C73849 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C824F4817964F5800C73849 /* Foundation.framework */; };
 		4C824F4B17964F5800C73849 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C824F4A17964F5800C73849 /* CoreGraphics.framework */; };
@@ -27,6 +37,7 @@
 		4C824F6A17964F5800C73849 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C824F4C17964F5800C73849 /* UIKit.framework */; };
 		4C824F7217964F5800C73849 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C824F7017964F5800C73849 /* InfoPlist.strings */; };
 		4C824F7417964F5800C73849 /* OLLPLLTrainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C824F7317964F5800C73849 /* OLLPLLTrainerTests.m */; };
+		DF8B5FB2C7564CDF8B5023E6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B691DA97020C43EB8511F178 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,13 +51,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36A2ED14179996D3004599CE /* yellowFace.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yellowFace.jpeg; sourceTree = "<group>"; };
+		36A2ED161799AE27004599CE /* OLLStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OLLStoryboard.storyboard; sourceTree = "<group>"; };
+		36A2ED181799AE35004599CE /* PLLStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PLLStoryboard.storyboard; sourceTree = "<group>"; };
+		36A2ED1C1799AF3D004599CE /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		36A2ED1D1799AF3D004599CE /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		36A2ED201799B39A004599CE /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		36A2ED211799B39A004599CE /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		4C1E2F491796572B006B7A7A /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
 		4C1E2F4A1796572B006B7A7A /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
-		4C1E2F4C1796576D006B7A7A /* overlaygraphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlaygraphic.png; sourceTree = "<group>"; };
-		4C1E2F4E17965D1B006B7A7A /* ColorPickerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerImageView.h; sourceTree = "<group>"; };
-		4C1E2F4F17965D1B006B7A7A /* ColorPickerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerImageView.m; sourceTree = "<group>"; };
 		4C1E2F5117965E7A006B7A7A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		4C1E2F5317965FFE006B7A7A /* 4729020a-7593-4986-bd50-4dbb2e8338d0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "4729020a-7593-4986-bd50-4dbb2e8338d0.jpeg"; sourceTree = "<group>"; };
+		4C3ACC8B1798BF7E00772067 /* cubeGuide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cubeGuide.png; sourceTree = "<group>"; };
+		4C3ACC8D1798BFD300772067 /* StorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageManager.m; sourceTree = "<group>"; };
+		4C3ACC8E1798BFD300772067 /* StorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageManager.h; sourceTree = "<group>"; };
+		4C3ACC901798BFD300772067 /* AlgorithmData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AlgorithmData.xcdatamodel; sourceTree = "<group>"; };
+		4C3ACC911798BFD300772067 /* PLL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLL.h; sourceTree = "<group>"; };
+		4C3ACC921798BFD300772067 /* PLL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLL.m; sourceTree = "<group>"; };
+		4C3ACC931798BFD300772067 /* UserPLL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPLL.h; sourceTree = "<group>"; };
+		4C3ACC941798BFD300772067 /* UserPLL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPLL.m; sourceTree = "<group>"; };
+		4C3ACC951798BFD300772067 /* OLL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLL.h; sourceTree = "<group>"; };
+		4C3ACC961798BFD300772067 /* OLL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLL.m; sourceTree = "<group>"; };
+		4C3ACC971798BFD300772067 /* UserOLL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOLL.h; sourceTree = "<group>"; };
+		4C3ACC981798BFD300772067 /* UserOLL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOLL.m; sourceTree = "<group>"; };
+		4C3ACCA01798C05900772067 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4C7CE8D217978785007E4C27 /* fishFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fishFace.png; sourceTree = "<group>"; };
 		4C824F4517964F5800C73849 /* OLLPLLTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OLLPLLTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C824F4817964F5800C73849 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,6 +94,8 @@
 		4C824F6F17964F5800C73849 /* OLLPLLTrainerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OLLPLLTrainerTests-Info.plist"; sourceTree = "<group>"; };
 		4C824F7117964F5800C73849 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C824F7317964F5800C73849 /* OLLPLLTrainerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OLLPLLTrainerTests.m; sourceTree = "<group>"; };
+		B691DA97020C43EB8511F178 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB46AEAC6DAE4D509E40D7AE /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +103,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3ACCA11798C05900772067 /* CoreData.framework in Frameworks */,
 				4C1E2F5217965E7A006B7A7A /* QuartzCore.framework in Frameworks */,
 				4C824F4B17964F5800C73849 /* CoreGraphics.framework in Frameworks */,
 				4C824F4D17964F5800C73849 /* UIKit.framework in Frameworks */,
 				4C824F4917964F5800C73849 /* Foundation.framework in Frameworks */,
+				DF8B5FB2C7564CDF8B5023E6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +125,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36A2ED1A1799AE41004599CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C824F5A17964F5800C73849 /* Main.storyboard */,
+				36A2ED161799AE27004599CE /* OLLStoryboard.storyboard */,
+				36A2ED181799AE35004599CE /* PLLStoryboard.storyboard */,
+				4C1E2F491796572B006B7A7A /* OverlayView.h */,
+				4C1E2F4A1796572B006B7A7A /* OverlayView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		36A2ED1B1799AE6A004599CE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4C7CE8D217978785007E4C27 /* fishFace.png */,
+				4C3ACC8B1798BF7E00772067 /* cubeGuide.png */,
+				36A2ED14179996D3004599CE /* yellowFace.jpeg */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		36A2ED1F1799B35C004599CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C824F5D17964F5800C73849 /* ViewController.h */,
+				4C824F5E17964F5800C73849 /* ViewController.m */,
+				36A2ED1C1799AF3D004599CE /* MainMenuViewController.h */,
+				36A2ED1D1799AF3D004599CE /* MainMenuViewController.m */,
+				36A2ED201799B39A004599CE /* CameraViewController.h */,
+				36A2ED211799B39A004599CE /* CameraViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4C3ACC9F1798BFD600772067 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C824F5717964F5800C73849 /* AppDelegate.h */,
+				4C824F5817964F5800C73849 /* AppDelegate.m */,
+				4C3ACC8D1798BFD300772067 /* StorageManager.m */,
+				4C3ACC8E1798BFD300772067 /* StorageManager.h */,
+				4C3ACC8F1798BFD300772067 /* AlgorithmData.xcdatamodeld */,
+				4C3ACC911798BFD300772067 /* PLL.h */,
+				4C3ACC921798BFD300772067 /* PLL.m */,
+				4C3ACC931798BFD300772067 /* UserPLL.h */,
+				4C3ACC941798BFD300772067 /* UserPLL.m */,
+				4C3ACC951798BFD300772067 /* OLL.h */,
+				4C3ACC961798BFD300772067 /* OLL.m */,
+				4C3ACC971798BFD300772067 /* UserOLL.h */,
+				4C3ACC981798BFD300772067 /* UserOLL.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		4C824F3C17964F5800C73849 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +187,7 @@
 				4C824F6D17964F5800C73849 /* OLLPLLTrainerTests */,
 				4C824F4717964F5800C73849 /* Frameworks */,
 				4C824F4617964F5800C73849 /* Products */,
+				EB46AEAC6DAE4D509E40D7AE /* Pods/Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,11 +203,13 @@
 		4C824F4717964F5800C73849 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C3ACCA01798C05900772067 /* CoreData.framework */,
 				4C1E2F5117965E7A006B7A7A /* QuartzCore.framework */,
 				4C824F4817964F5800C73849 /* Foundation.framework */,
 				4C824F4A17964F5800C73849 /* CoreGraphics.framework */,
 				4C824F4C17964F5800C73849 /* UIKit.framework */,
 				4C824F6717964F5800C73849 /* XCTest.framework */,
+				B691DA97020C43EB8511F178 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,16 +217,9 @@
 		4C824F4E17964F5800C73849 /* OLLPLLTrainer */ = {
 			isa = PBXGroup;
 			children = (
-				4C824F5717964F5800C73849 /* AppDelegate.h */,
-				4C824F5817964F5800C73849 /* AppDelegate.m */,
-				4C824F5A17964F5800C73849 /* Main.storyboard */,
-				4C824F5D17964F5800C73849 /* ViewController.h */,
-				4C824F5E17964F5800C73849 /* ViewController.m */,
-				4C1E2F4E17965D1B006B7A7A /* ColorPickerImageView.h */,
-				4C1E2F4F17965D1B006B7A7A /* ColorPickerImageView.m */,
-				4C1E2F491796572B006B7A7A /* OverlayView.h */,
-				4C1E2F4A1796572B006B7A7A /* OverlayView.m */,
-				4C824F6017964F5800C73849 /* Images.xcassets */,
+				4C3ACC9F1798BFD600772067 /* Model */,
+				36A2ED1A1799AE41004599CE /* View */,
+				36A2ED1F1799B35C004599CE /* Controller */,
 				4C824F4F17964F5800C73849 /* Supporting Files */,
 			);
 			path = OLLPLLTrainer;
@@ -146,11 +228,10 @@
 		4C824F4F17964F5800C73849 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4C7CE8D217978785007E4C27 /* fishFace.png */,
-				4C1E2F4C1796576D006B7A7A /* overlaygraphic.png */,
+				36A2ED1B1799AE6A004599CE /* Assets */,
+				4C824F6017964F5800C73849 /* Images.xcassets */,
 				4C824F5017964F5800C73849 /* OLLPLLTrainer-Info.plist */,
 				4C824F5117964F5800C73849 /* InfoPlist.strings */,
-				4C1E2F5317965FFE006B7A7A /* 4729020a-7593-4986-bd50-4dbb2e8338d0.jpeg */,
 				4C824F5417964F5800C73849 /* main.m */,
 				4C824F5617964F5800C73849 /* OLLPLLTrainer-Prefix.pch */,
 			);
@@ -182,9 +263,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C824F7717964F5800C73849 /* Build configuration list for PBXNativeTarget "OLLPLLTrainer" */;
 			buildPhases = (
+				16F382BB3FF14E4FBC701010 /* Check Pods Manifest.lock */,
 				4C824F4117964F5800C73849 /* Sources */,
 				4C824F4217964F5800C73849 /* Frameworks */,
 				4C824F4317964F5800C73849 /* Resources */,
+				726BAF2610A342D7A0D03337 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,11 +334,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36A2ED191799AE36004599CE /* PLLStoryboard.storyboard in Resources */,
 				4C7CE8D317978785007E4C27 /* fishFace.png in Resources */,
+				36A2ED171799AE27004599CE /* OLLStoryboard.storyboard in Resources */,
 				4C824F6117964F5800C73849 /* Images.xcassets in Resources */,
-				4C1E2F4D1796576D006B7A7A /* overlaygraphic.png in Resources */,
-				4C1E2F5417965FFE006B7A7A /* 4729020a-7593-4986-bd50-4dbb2e8338d0.jpeg in Resources */,
+				4C3ACC8C1798BF7E00772067 /* cubeGuide.png in Resources */,
 				4C824F5317964F5800C73849 /* InfoPlist.strings in Resources */,
+				36A2ED15179996D3004599CE /* yellowFace.jpeg in Resources */,
 				4C824F5C17964F5800C73849 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,16 +355,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16F382BB3FF14E4FBC701010 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		726BAF2610A342D7A0D03337 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4C824F4117964F5800C73849 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3ACC9B1798BFD300772067 /* PLL.m in Sources */,
+				4C3ACC9D1798BFD300772067 /* OLL.m in Sources */,
+				4C3ACC9A1798BFD300772067 /* AlgorithmData.xcdatamodeld in Sources */,
 				4C824F5F17964F5800C73849 /* ViewController.m in Sources */,
 				4C1E2F4B1796572B006B7A7A /* OverlayView.m in Sources */,
+				4C3ACC9C1798BFD300772067 /* UserPLL.m in Sources */,
+				36A2ED1E1799AF3D004599CE /* MainMenuViewController.m in Sources */,
 				4C824F5917964F5800C73849 /* AppDelegate.m in Sources */,
-				4C1E2F5017965D1B006B7A7A /* ColorPickerImageView.m in Sources */,
+				4C3ACC991798BFD300772067 /* StorageManager.m in Sources */,
+				36A2ED221799B39A004599CE /* CameraViewController.m in Sources */,
 				4C824F5517964F5800C73849 /* main.m in Sources */,
+				4C3ACC9E1798BFD300772067 /* UserOLL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +524,7 @@
 		};
 		4C824F7817964F5800C73849 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB46AEAC6DAE4D509E40D7AE /* Pods/Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -413,6 +539,7 @@
 		};
 		4C824F7917964F5800C73849 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB46AEAC6DAE4D509E40D7AE /* Pods/Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -496,6 +623,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4C3ACC8F1798BFD300772067 /* AlgorithmData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4C3ACC901798BFD300772067 /* AlgorithmData.xcdatamodel */,
+			);
+			currentVersion = 4C3ACC901798BFD300772067 /* AlgorithmData.xcdatamodel */;
+			path = AlgorithmData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4C824F3D17964F5800C73849 /* Project object */;
 }

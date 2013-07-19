@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-UIImage-Resize.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4F1CD8165FEF4B92BB1D01A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>62070706169F48E088494613</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83DFD399606047F99F45EFB9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>87CD698B6AD8447AAD3CAFBE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7ABA2ADC11F486D8CB5A670</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D72ED6A1871B445D980CBC28</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DED240A394C64D1B9127B07C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F54BEFB575D549A28C3DC4A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

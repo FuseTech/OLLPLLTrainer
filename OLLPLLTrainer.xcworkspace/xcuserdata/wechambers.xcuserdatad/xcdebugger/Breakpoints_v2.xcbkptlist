@@ -14,7 +14,13 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "237"
+<<<<<<< HEAD
             endingLineNumber = "237">
+=======
+            endingLineNumber = "237"
+            landmarkName = "+imageWithImage:scaledToSize:"
+            landmarkType = "5">
+>>>>>>> Develop
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -28,7 +34,13 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "241"
+<<<<<<< HEAD
             endingLineNumber = "241">
+=======
+            endingLineNumber = "241"
+            landmarkName = "+imageWithImage:scaledToSize:"
+            landmarkType = "5">
+>>>>>>> Develop
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,7 +54,13 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "244"
+<<<<<<< HEAD
             endingLineNumber = "244">
+=======
+            endingLineNumber = "244"
+            landmarkName = "+imageWithImage:scaledToSize:"
+            landmarkType = "5">
+>>>>>>> Develop
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -56,7 +74,13 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "247"
+<<<<<<< HEAD
             endingLineNumber = "247">
+=======
+            endingLineNumber = "247"
+            landmarkName = "+imageWithImage:scaledToSize:"
+            landmarkType = "5">
+>>>>>>> Develop
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -70,7 +94,13 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "251"
+<<<<<<< HEAD
             endingLineNumber = "251">
+=======
+            endingLineNumber = "251"
+            landmarkName = "+imageWithImage:scaledToSize:"
+            landmarkType = "5">
+>>>>>>> Develop
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -84,7 +114,13 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "526"
+<<<<<<< HEAD
             endingLineNumber = "526">
+=======
+            endingLineNumber = "526"
+            landmarkName = "-checkColorWithOriginPoint:onFace:"
+            landmarkType = "5">
+>>>>>>> Develop
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -98,7 +134,13 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "529"
+<<<<<<< HEAD
             endingLineNumber = "529">
+=======
+            endingLineNumber = "529"
+            landmarkName = "-checkColorWithOriginPoint:onFace:"
+            landmarkType = "5">
+>>>>>>> Develop
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -107,11 +149,19 @@
                   symbolName = "-[ViewController checkColorWithOriginPoint:onFace:]"
                   moduleName = "OLLPLLTrainer"
                   urlString = "file://localhost/Users/wechambers/Development/Practice/OLLPLLTrainer/OLLPLLTrainer/ViewController.m"
+<<<<<<< HEAD
                   timestampString = "395951144.402852"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "529"
                   endingLineNumber = "529"
+=======
+                  timestampString = "395945419.160224"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "531"
+                  endingLineNumber = "531"
+>>>>>>> Develop
                   offsetFromSymbolStart = "876">
                </Location>
                <Location
@@ -121,11 +171,19 @@
                   symbolName = "-[ViewController checkColorWithOriginPoint:onFace:]"
                   moduleName = "OLLPLLTrainer"
                   urlString = "file://localhost/Users/wechambers/Development/Practice/OLLPLLTrainer/OLLPLLTrainer/ViewController.m"
+<<<<<<< HEAD
                   timestampString = "395951144.403109"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "529"
                   endingLineNumber = "529"
+=======
+                  timestampString = "395945419.160435"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "531"
+                  endingLineNumber = "531"
+>>>>>>> Develop
                   offsetFromSymbolStart = "922">
                </Location>
             </Locations>

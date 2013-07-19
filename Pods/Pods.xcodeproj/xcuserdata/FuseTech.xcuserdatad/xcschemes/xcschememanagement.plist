@@ -2,25 +2,27 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-<<<<<<< HEAD
-=======
 	<key>SchemeUserState</key>
 	<dict>
-		<key>OLLPLLTrainer.xcscheme</key>
+		<key>Pods-UIImage-Resize.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
->>>>>>> Develop
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4C824F4417964F5800C73849</key>
+		<key>C7ABA2ADC11F486D8CB5A670</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C824F6517964F5800C73849</key>
+		<key>D72ED6A1871B445D980CBC28</key>
 		<dict>
 			<key>primary</key>
 			<true/>

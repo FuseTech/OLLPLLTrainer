@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3383" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="OLL" representedClassName="OLL" syncable="YES">
+        <attribute name="algorithm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="userOLLData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserOLL" inverseName="parentOLL" inverseEntity="UserOLL" syncable="YES"/>
+    </entity>
+    <entity name="PLL" representedClassName="PLL" syncable="YES">
+        <attribute name="algorithm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="userPLLData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserPLL" inverseName="parentPLL" inverseEntity="UserPLL" syncable="YES"/>
+    </entity>
+    <entity name="UserOLL" representedClassName="UserOLL" syncable="YES">
+        <attribute name="confidenceRating" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numAttempts" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numSolves" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="seenBefore" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="skipFlag" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="userKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userNotes" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parentOLL" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OLL" inverseName="userOLLData" inverseEntity="OLL" syncable="YES"/>
+    </entity>
+    <entity name="UserPLL" representedClassName="UserPLL" syncable="YES">
+        <attribute name="confidenceRating" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numAttempts" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numSolves" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="seenBefore" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="skipFlag" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="userKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userNotes" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parentPLL" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PLL" inverseName="userPLLData" inverseEntity="PLL" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="OLL" positionX="-981" positionY="-702" width="128" height="118"/>
+        <element name="UserOLL" positionX="-729" positionY="-747" width="128" height="163"/>
+        <element name="PLL" positionX="-983" positionY="-496" width="128" height="118"/>
+        <element name="UserPLL" positionX="-722" positionY="-541" width="128" height="163"/>
+    </elements>
+</model>
