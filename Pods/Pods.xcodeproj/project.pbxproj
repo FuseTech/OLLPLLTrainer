@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -852,3 +853,417 @@
 	<string>11F4D1F5F3D044EF9EFB7A9A</string>
 </dict>
 </plist>
+=======
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27AB1BFC67DE47649D6CE6AC /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C6E1F53BF4AAA8F0D09E7 /* Pods-dummy.m */; };
+		342CA84CE44F468CBF177648 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8476118A2797464E82FCCB43 /* Foundation.framework */; };
+		72EEF63E7D8A42F687B6CBAF /* Pods-UIImage-Resize-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C81854BB4743BA8E9940C6 /* Pods-UIImage-Resize-dummy.m */; };
+		877843092FD949ADAE98CD06 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D13E90E3F6445AEA035D7F7 /* UIImage+Resize.m */; };
+		BF460A20996049CA828623C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8476118A2797464E82FCCB43 /* Foundation.framework */; };
+		D5D80B28062248A384DA918B /* UIImage+Resize.h in Headers */ = {isa = PBXBuildFile; fileRef = B76850822D82438D9E6D1287 /* UIImage+Resize.h */; };
+		FEA8C71A79604A1CAD7BF7B8 /* libPods-UIImage-Resize.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49E7F52AB10484CB82089CF /* libPods-UIImage-Resize.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F746589585AB44CDBAFEDC6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9879C27B43AE4101BA315C3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F1CD8165FEF4B92BB1D01A1;
+			remoteInfo = "Pods-UIImage-Resize";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1198E20D03444FCBB1074CBA /* Pods-UIImage-Resize-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIImage-Resize-Private.xcconfig"; sourceTree = SOURCE_ROOT; };
+		194079E5715E4F369A502E7F /* Pods-UIImage-Resize.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIImage-Resize.xcconfig"; sourceTree = SOURCE_ROOT; };
+		34005528965544B4A871FE7A /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = SOURCE_ROOT; };
+		57E041B85F8E43ABB24B1BD2 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
+		5840EB805D404A6988F3F21B /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7D13E90E3F6445AEA035D7F7 /* UIImage+Resize.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "UIImage-Resize/UIImage+Resize.m"; sourceTree = SOURCE_ROOT; };
+		81C81854BB4743BA8E9940C6 /* Pods-UIImage-Resize-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UIImage-Resize-dummy.m"; sourceTree = SOURCE_ROOT; };
+		8476118A2797464E82FCCB43 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		8EBE91052DA94049927700F8 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = SOURCE_ROOT; };
+		9077CD5DEC9E41BD9E993B4B /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = SOURCE_ROOT; };
+		B3F2B8E645DF462E9EDDBE13 /* Pods-UIImage-Resize-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UIImage-Resize-prefix.pch"; sourceTree = SOURCE_ROOT; };
+		B76850822D82438D9E6D1287 /* UIImage+Resize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Resize.h"; path = "UIImage-Resize/UIImage+Resize.h"; sourceTree = SOURCE_ROOT; };
+		C8A4AC12984641DEBB57DD86 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		D83C6E1F53BF4AAA8F0D09E7 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = SOURCE_ROOT; };
+		E49E7F52AB10484CB82089CF /* libPods-UIImage-Resize.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIImage-Resize.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F88EF28566B44952857F8380 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C7FFD5E7DE746509A9D088B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF460A20996049CA828623C0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F222254F1A0E4DEF94939292 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				342CA84CE44F468CBF177648 /* Foundation.framework in Frameworks */,
+				FEA8C71A79604A1CAD7BF7B8 /* libPods-UIImage-Resize.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		044ADFECF2C54FC6AE56B186 /* UIImage-Resize */ = {
+			isa = PBXGroup;
+			children = (
+				B76850822D82438D9E6D1287 /* UIImage+Resize.h */,
+				7D13E90E3F6445AEA035D7F7 /* UIImage+Resize.m */,
+			);
+			name = "UIImage-Resize";
+			sourceTree = "<group>";
+		};
+		1B27D8F2101E4BEB847A1B66 = {
+			isa = PBXGroup;
+			children = (
+				2186FF2165FE4732BE77C436 /* Frameworks */,
+				B5E38875BF60462EB19483B9 /* Pods */,
+				8700E2FFB3BF47BFB008AE19 /* Products */,
+				BA83BC3E351943EF87A983AB /* Targets Support Files */,
+				5840EB805D404A6988F3F21B /* Podfile */,
+			);
+			sourceTree = "<group>";
+		};
+		1B99522CEC88487E81A4BBFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8A4AC12984641DEBB57DD86 /* Pods.xcconfig */,
+				8EBE91052DA94049927700F8 /* Pods-environment.h */,
+				34005528965544B4A871FE7A /* Pods-resources.sh */,
+				57E041B85F8E43ABB24B1BD2 /* Pods-acknowledgements.plist */,
+				9077CD5DEC9E41BD9E993B4B /* Pods-acknowledgements.markdown */,
+				D83C6E1F53BF4AAA8F0D09E7 /* Pods-dummy.m */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2186FF2165FE4732BE77C436 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8476118A2797464E82FCCB43 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		734090004CBC47349EE046E5 /* Pods-UIImage-Resize */ = {
+			isa = PBXGroup;
+			children = (
+				194079E5715E4F369A502E7F /* Pods-UIImage-Resize.xcconfig */,
+				1198E20D03444FCBB1074CBA /* Pods-UIImage-Resize-Private.xcconfig */,
+				B3F2B8E645DF462E9EDDBE13 /* Pods-UIImage-Resize-prefix.pch */,
+				81C81854BB4743BA8E9940C6 /* Pods-UIImage-Resize-dummy.m */,
+			);
+			name = "Pods-UIImage-Resize";
+			sourceTree = "<group>";
+		};
+		8700E2FFB3BF47BFB008AE19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E49E7F52AB10484CB82089CF /* libPods-UIImage-Resize.a */,
+				F88EF28566B44952857F8380 /* libPods.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5E38875BF60462EB19483B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				044ADFECF2C54FC6AE56B186 /* UIImage-Resize */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA83BC3E351943EF87A983AB /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				734090004CBC47349EE046E5 /* Pods-UIImage-Resize */,
+				1B99522CEC88487E81A4BBFD /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B1BF3FA7039541EBA32A9793 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5D80B28062248A384DA918B /* UIImage+Resize.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4F1CD8165FEF4B92BB1D01A1 /* Pods-UIImage-Resize */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4163D5253B584F3698F65E88 /* Build configuration list for PBXNativeTarget "Pods-UIImage-Resize" */;
+			buildPhases = (
+				63632E2867AA422B80AE626D /* Sources */,
+				0C7FFD5E7DE746509A9D088B /* Frameworks */,
+				B1BF3FA7039541EBA32A9793 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-UIImage-Resize";
+			productName = "Pods-UIImage-Resize";
+			productReference = E49E7F52AB10484CB82089CF /* libPods-UIImage-Resize.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DED240A394C64D1B9127B07C /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72BD4E34A3B7410BB7F14DB1 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				91C96A2B3B78453399DA269E /* Sources */,
+				F222254F1A0E4DEF94939292 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				748B90901BEF4887BC1F1AFE /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = F88EF28566B44952857F8380 /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9879C27B43AE4101BA315C3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = C179FDAFA4A84DD882A3B02B /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B27D8F2101E4BEB847A1B66;
+			productRefGroup = 8700E2FFB3BF47BFB008AE19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F1CD8165FEF4B92BB1D01A1 /* Pods-UIImage-Resize */,
+				DED240A394C64D1B9127B07C /* Pods */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63632E2867AA422B80AE626D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				877843092FD949ADAE98CD06 /* UIImage+Resize.m in Sources */,
+				72EEF63E7D8A42F687B6CBAF /* Pods-UIImage-Resize-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91C96A2B3B78453399DA269E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27AB1BFC67DE47649D6CE6AC /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		748B90901BEF4887BC1F1AFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F1CD8165FEF4B92BB1D01A1 /* Pods-UIImage-Resize */;
+			targetProxy = F746589585AB44CDBAFEDC6F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0143A4A67F894B8FA3063031 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		28BFD17BAD374B0E985A139B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8A4AC12984641DEBB57DD86 /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5CAA342D9EF84214BAC2926A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8A4AC12984641DEBB57DD86 /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B7041587ECDB41A0B6584CB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		C8ABFEF1F2A044FF973F705B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1198E20D03444FCBB1074CBA /* Pods-UIImage-Resize-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-UIImage-Resize-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E744A154A0664F36B9D8EA82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1198E20D03444FCBB1074CBA /* Pods-UIImage-Resize-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-UIImage-Resize-prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4163D5253B584F3698F65E88 /* Build configuration list for PBXNativeTarget "Pods-UIImage-Resize" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E744A154A0664F36B9D8EA82 /* Release */,
+				C8ABFEF1F2A044FF973F705B /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72BD4E34A3B7410BB7F14DB1 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CAA342D9EF84214BAC2926A /* Release */,
+				28BFD17BAD374B0E985A139B /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C179FDAFA4A84DD882A3B02B /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0143A4A67F894B8FA3063031 /* Release */,
+				B7041587ECDB41A0B6584CB4 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9879C27B43AE4101BA315C3E /* Project object */;
+}
+>>>>>>> 59f9ac2cb5eef15aeabd52fca1e4da2b57852735

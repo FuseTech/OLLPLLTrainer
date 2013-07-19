@@ -18,5 +18,6 @@
 @property (nonatomic, retain) NSString * key;
 @property (nonatomic, retain) NSString * notes;
 @property (nonatomic, retain) UserOLL *userOLLData;
+@property (nonatomic, retain) NSString * binary;
 
 @end
