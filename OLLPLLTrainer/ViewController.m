@@ -21,7 +21,7 @@
 #define BottomRight CGPointMake (230,300)
 #define numOfSamples 10
 
-//  
+
 @interface ViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 
