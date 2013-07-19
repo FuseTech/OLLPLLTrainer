@@ -9,6 +9,9 @@
 #import "CameraViewController.h"
 #import "OverlayView.h"
 #import "UIImage+Resize.h"
+#import "StorageManager.h"
+#import "OLL.h"
+#import "OLLDetailViewController.h"
 
 #define TopLeft CGPointMake(80,150)
 #define TopCenter CGPointMake(150,150)
@@ -54,6 +57,7 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
 
 @property (nonatomic, strong) UIColor *centerColor;
+@property (nonatomic, strong) OLL *foundOLL;
 
 @end
 
@@ -146,14 +150,35 @@ typedef enum {
     NSNumber *end = [NSNumber numberWithInt:0];
     [resultArray addObject:end];
     
-    //Now that we have a True/False values for pieces that match the center color, we can compare it to the database
-    [self findMatch];
+    [self getResultStringFromArray:resultArray];
+    
+    
 }
 
--(void)findMatch {
+-(void)getResultStringFromArray:(NSArray *)array {
+    NSString *result = [NSString string];
+    for (int i =0; i < [array count]; i++) {
+        result = [result stringByAppendingString:[NSString stringWithFormat:@"%@", [array objectAtIndex:i]]];
+    }
+    [self findResultFromString:result];
+}
+
+-(void)findResultFromString:(NSString *)string {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"OLL" inManagedObjectContext:[[StorageManager sharedManager]managedObjectContext]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"binary == %@", string];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:predicate];
     
+    NSError *error;
+    NSArray *result = [[StorageManager sharedManager].managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    self.foundOLL = [result objectAtIndex:0];
+    [self performSegueWithIdentifier:@"detail" sender:self];
     
 }
+    
+    
+
 
 #pragma mark IB Actions
 
@@ -530,6 +555,16 @@ typedef enum {
     color = [UIColor colorWithRed:(averageRed/255.0f) green:(averageGreen/255.0f) blue:(averageBlue/255.0f) alpha:(averageAlpha/255.0f)];
     return color;
 }
+
+#pragma mark Segue Methods
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"detail"]) {
+        [segue.destinationViewController setDetailOLL:self.foundOLL];
+    }
+   
+}
+
 
 
 

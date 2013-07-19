@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class OLL;
 
 @interface OLLDetailViewController : UIViewController
+
+@property (nonatomic, strong) OLL *detailOLL;
 
 @end

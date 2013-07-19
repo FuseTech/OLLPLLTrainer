@@ -107,6 +107,7 @@
                         <outlet property="leftButton" destination="Xil-jt-zIM" id="YxE-BR-OAx"/>
                         <outlet property="rightButton" destination="xnr-nW-ILG" id="5dD-yO-1IJ"/>
                         <outlet property="topButton" destination="55B-sL-SX2" id="hva-Ky-T6r"/>
+                        <segue destination="0ym-Sx-ZXh" kind="push" identifier="detail" id="ZGw-Wa-Mh2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOe-Zs-3RN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,8 +126,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New OLL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB3-oB-L19">
-                                <rect key="frame" x="115" y="206" width="71" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OLL Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB3-oB-L19">
+                                <rect key="frame" x="115" y="206" width="89" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -146,6 +147,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9a5-Ek-OvG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKQ-PP-CLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

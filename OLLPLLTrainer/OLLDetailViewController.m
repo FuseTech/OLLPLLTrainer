@@ -7,6 +7,7 @@
 //
 
 #import "OLLDetailViewController.h"
+#import "OLL.h"
 
 @interface OLLDetailViewController ()
 
