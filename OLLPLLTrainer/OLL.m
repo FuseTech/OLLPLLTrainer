@@ -17,5 +17,6 @@
 @dynamic key;
 @dynamic notes;
 @dynamic userOLLData;
+@dynamic binary;
 
 @end

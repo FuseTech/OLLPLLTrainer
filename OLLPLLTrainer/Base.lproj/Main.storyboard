@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="-130" y="441"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="uct-AS-BAb">
             <objects>
-                <viewController id="sqr-dT-r4e" sceneMemberID="viewController">
+                <viewController id="sqr-dT-r4e" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HUs-3G-tbz"/>
                         <viewControllerLayoutGuide type="bottom" id="vkX-wm-ysd"/>

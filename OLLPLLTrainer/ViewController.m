@@ -220,37 +220,19 @@
     
     UIImage *selectedImage = (UIImage *) [info objectForKey:
                                           UIImagePickerControllerOriginalImage];
-    UIImage *resizedImage =  [[self class] imageWithImage:selectedImage scaledToSize:CGSizeMake(320,480)];
+   // UIImage *resizedImage =  [[self class] imageWithImage:selectedImage scaledToSize:CGSizeMake(320,480)];
     NSLog(@"%f is width and %f is height for orig", selectedImage.size.width, selectedImage.size.height);
-    NSLog(@"%f is w and %f is h for resized", resizedImage.size.width, resizedImage.size.height);
+   // NSLog(@"%f is w and %f is h for resized", resizedImage.size.width, resizedImage.size.height);
     
     
-    self.topFace = resizedImage;
+   // self.topFace = resizedImage;
     
     
     [self dismissViewControllerAnimated:YES completion:nil];
     //  [self analyzeFace];
     
 }
-+ (UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize;
-{
-    // Create a graphics image context
-    UIGraphicsBeginImageContext(newSize);
-    
-    // Tell the old image to draw in this new context, with the desired
-    // new size
-    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
-    
-    // Get the new image from the context
-    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    // End the context
-    UIGraphicsEndImageContext();
-    NSLog(@"%f is newImage w, %f is h", newImage.size.width, newImage.size.height);
-    // Return the new image.
-    NSLog(@"%@", newImage);
-    return newImage;
-}
+
 
 - (void) imagePickerControllerDidCancel: (UIImagePickerController *)picker {
     [self dismissViewControllerAnimated:YES completion:NULL];
