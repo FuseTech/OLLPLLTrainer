@@ -19,6 +19,11 @@
 		36A2ED3E1799C27B004599CE /* DebriefViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A2ED3D1799C27B004599CE /* DebriefViewController.m */; };
 		4C1E2F4B1796572B006B7A7A /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E2F4A1796572B006B7A7A /* OverlayView.m */; };
 		4C1E2F5217965E7A006B7A7A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1E2F5117965E7A006B7A7A /* QuartzCore.framework */; };
+		4C2D63B9179A519900E9CC65 /* template.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D63B8179A519900E9CC65 /* template.jpeg */; };
+		4C2D63C3179A577D00E9CC65 /* zxc2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D63C0179A577D00E9CC65 /* zxc2.png */; };
+		4C2D63C4179A577D00E9CC65 /* qwe2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D63C1179A577D00E9CC65 /* qwe2.png */; };
+		4C2D63C5179A577D00E9CC65 /* asd2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D63C2179A577D00E9CC65 /* asd2.png */; };
+		4C2D63C7179A584D00E9CC65 /* check.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D63C6179A584D00E9CC65 /* check.jpeg */; };
 		4C3ACC8C1798BF7E00772067 /* cubeGuide.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3ACC8B1798BF7E00772067 /* cubeGuide.png */; };
 		4C3ACC991798BFD300772067 /* StorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3ACC8D1798BFD300772067 /* StorageManager.m */; };
 		4C3ACC9A1798BFD300772067 /* AlgorithmData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C3ACC8F1798BFD300772067 /* AlgorithmData.xcdatamodeld */; };
@@ -76,6 +81,11 @@
 		4C1E2F491796572B006B7A7A /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
 		4C1E2F4A1796572B006B7A7A /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
 		4C1E2F5117965E7A006B7A7A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4C2D63B8179A519900E9CC65 /* template.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = template.jpeg; sourceTree = "<group>"; };
+		4C2D63C0179A577D00E9CC65 /* zxc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zxc2.png; sourceTree = "<group>"; };
+		4C2D63C1179A577D00E9CC65 /* qwe2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qwe2.png; sourceTree = "<group>"; };
+		4C2D63C2179A577D00E9CC65 /* asd2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asd2.png; sourceTree = "<group>"; };
+		4C2D63C6179A584D00E9CC65 /* check.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = check.jpeg; sourceTree = "<group>"; };
 		4C3ACC8B1798BF7E00772067 /* cubeGuide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cubeGuide.png; sourceTree = "<group>"; };
 		4C3ACC8D1798BFD300772067 /* StorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageManager.m; sourceTree = "<group>"; };
 		4C3ACC8E1798BFD300772067 /* StorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageManager.h; sourceTree = "<group>"; };
@@ -155,6 +165,11 @@
 		36A2ED1B1799AE6A004599CE /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4C2D63C6179A584D00E9CC65 /* check.jpeg */,
+				4C2D63C0179A577D00E9CC65 /* zxc2.png */,
+				4C2D63C1179A577D00E9CC65 /* qwe2.png */,
+				4C2D63C2179A577D00E9CC65 /* asd2.png */,
+				4C2D63B8179A519900E9CC65 /* template.jpeg */,
 				4C7CE8D217978785007E4C27 /* fishFace.png */,
 				4C3ACC8B1798BF7E00772067 /* cubeGuide.png */,
 				36A2ED14179996D3004599CE /* yellowFace.jpeg */,
@@ -370,10 +385,15 @@
 				36A2ED191799AE36004599CE /* PLLStoryboard.storyboard in Resources */,
 				4C7CE8D317978785007E4C27 /* fishFace.png in Resources */,
 				36A2ED171799AE27004599CE /* OLLStoryboard.storyboard in Resources */,
+				4C2D63C7179A584D00E9CC65 /* check.jpeg in Resources */,
 				4C824F6117964F5800C73849 /* Images.xcassets in Resources */,
+				4C2D63C4179A577D00E9CC65 /* qwe2.png in Resources */,
+				4C2D63C5179A577D00E9CC65 /* asd2.png in Resources */,
 				4C3ACC8C1798BF7E00772067 /* cubeGuide.png in Resources */,
 				4C824F5317964F5800C73849 /* InfoPlist.strings in Resources */,
+				4C2D63C3179A577D00E9CC65 /* zxc2.png in Resources */,
 				36A2ED15179996D3004599CE /* yellowFace.jpeg in Resources */,
+				4C2D63B9179A519900E9CC65 /* template.jpeg in Resources */,
 				4C824F5C17964F5800C73849 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
