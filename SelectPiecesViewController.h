@@ -1,5 +1,5 @@
 //
-//  PageViewController.h
+//  SelectPiecesViewController.h
 //  OLLPLLTrainer
 //
 //  Created by Weston Chambers on 7/21/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PageViewController : UIPageViewController <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+@interface SelectPiecesViewController : UIViewController <UINavigationControllerDelegate>
 
 @end

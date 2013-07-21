@@ -47,6 +47,7 @@
 		4C824F6A17964F5800C73849 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C824F4C17964F5800C73849 /* UIKit.framework */; };
 		4C824F7217964F5800C73849 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C824F7017964F5800C73849 /* InfoPlist.strings */; };
 		4C824F7417964F5800C73849 /* OLLPLLTrainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C824F7317964F5800C73849 /* OLLPLLTrainerTests.m */; };
+		4CD6C3B5179BB5CA0034ACF0 /* SelectPiecesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6C3B4179BB5CA0034ACF0 /* SelectPiecesViewController.m */; };
 		DF8B5FB2C7564CDF8B5023E6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B691DA97020C43EB8511F178 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -99,10 +100,6 @@
 		4C3ACC971798BFD300772067 /* UserOLL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOLL.h; sourceTree = "<group>"; };
 		4C3ACC981798BFD300772067 /* UserOLL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOLL.m; sourceTree = "<group>"; };
 		4C3ACCA01798C05900772067 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		4C5F98E4179BA73400FA434D /* PickPiecesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickPiecesViewController.h; sourceTree = "<group>"; };
-		4C5F98E5179BA73400FA434D /* PickPiecesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickPiecesViewController.m; sourceTree = "<group>"; };
-		4C5F98E6179BB33F00FA434D /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
-		4C5F98E7179BB33F00FA434D /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		4C7CE8D217978785007E4C27 /* fishFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fishFace.png; sourceTree = "<group>"; };
 		4C824F4517964F5800C73849 /* OLLPLLTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OLLPLLTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C824F4817964F5800C73849 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,6 +120,8 @@
 		4C824F6F17964F5800C73849 /* OLLPLLTrainerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OLLPLLTrainerTests-Info.plist"; sourceTree = "<group>"; };
 		4C824F7117964F5800C73849 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C824F7317964F5800C73849 /* OLLPLLTrainerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OLLPLLTrainerTests.m; sourceTree = "<group>"; };
+		4CD6C3B3179BB5CA0034ACF0 /* SelectPiecesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectPiecesViewController.h; path = ../SelectPiecesViewController.h; sourceTree = "<group>"; };
+		4CD6C3B4179BB5CA0034ACF0 /* SelectPiecesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectPiecesViewController.m; path = ../SelectPiecesViewController.m; sourceTree = "<group>"; };
 		B691DA97020C43EB8511F178 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB46AEAC6DAE4D509E40D7AE /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -198,6 +197,8 @@
 		36A2ED381799C1DF004599CE /* OLL */ = {
 			isa = PBXGroup;
 			children = (
+				4CD6C3B3179BB5CA0034ACF0 /* SelectPiecesViewController.h */,
+				4CD6C3B4179BB5CA0034ACF0 /* SelectPiecesViewController.m */,
 				36A2ED201799B39A004599CE /* CameraViewController.h */,
 				36A2ED211799B39A004599CE /* CameraViewController.m */,
 				36A2ED321799C165004599CE /* OLLDetailViewController.h */,
@@ -208,10 +209,6 @@
 				36A2ED3A1799C26D004599CE /* WalkthroughViewController.m */,
 				36A2ED3C1799C27B004599CE /* DebriefViewController.h */,
 				36A2ED3D1799C27B004599CE /* DebriefViewController.m */,
-				4C5F98E4179BA73400FA434D /* PickPiecesViewController.h */,
-				4C5F98E5179BA73400FA434D /* PickPiecesViewController.m */,
-				4C5F98E6179BB33F00FA434D /* PageViewController.h */,
-				4C5F98E7179BB33F00FA434D /* PageViewController.m */,
 			);
 			name = OLL;
 			sourceTree = "<group>";
@@ -465,6 +462,7 @@
 				4C3ACC9C1798BFD300772067 /* UserPLL.m in Sources */,
 				36A2ED1E1799AF3D004599CE /* MainMenuViewController.m in Sources */,
 				4C824F5917964F5800C73849 /* AppDelegate.m in Sources */,
+				4CD6C3B5179BB5CA0034ACF0 /* SelectPiecesViewController.m in Sources */,
 				4C3ACC991798BFD300772067 /* StorageManager.m in Sources */,
 				36A2ED341799C165004599CE /* OLLDetailViewController.m in Sources */,
 				36A2ED221799B39A004599CE /* CameraViewController.m in Sources */,
