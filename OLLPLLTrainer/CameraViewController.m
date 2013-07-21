@@ -13,16 +13,19 @@
 #import "OLL.h"
 #import "OLLDetailViewController.h"
 
-#define TopLeft CGPointMake(80,150)
-#define TopCenter CGPointMake(150,150)
-#define TopRight CGPointMake(230,150)
-#define MidLeft CGPointMake(80,220)
-#define MidCenter CGPointMake (150,220)
-#define MidRight CGPointMake (230,220)
-#define BottomLeft CGPointMake (80,300)
-#define BottomCenter CGPointMake (150,300)
-#define BottomRight CGPointMake (230,300)
+#define TopLeft CGPointMake(86,178)
+#define TopCenter CGPointMake(170,177)
+#define TopRight CGPointMake(255,177)
+#define MidLeft CGPointMake(86,250)
+#define MidCenter CGPointMake (176,250)
+#define MidRight CGPointMake (260,260)
+#define BottomLeft CGPointMake (86,345)
+#define BottomCenter CGPointMake (165,345)
+#define BottomRight CGPointMake (255,345)
 #define numOfSamples 10
+
+
+
 
 typedef enum {
     Top,
@@ -42,6 +45,8 @@ typedef enum {
 
 @property (nonatomic) currentFace currentFace;
 
+@property (weak, nonatomic) IBOutlet UIView *deleteMe;
+@property (weak, nonatomic) IBOutlet UIView *testedView;
 
 
 - (IBAction)topButtonPressed:(id)sender;
@@ -76,6 +81,7 @@ typedef enum {
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,7 +93,7 @@ typedef enum {
 -(void)viewDidAppear:(BOOL)animated {
     //Proceed once all images have been taken
     if (self.topFace && self.frontFace && self.rightFace && self.backFace && self.leftFace) {
-       self.centerColor = [self getCenterColor];
+        self.centerColor = [self getCenterColor];
         [self analyzeLayer];
     }
 }
@@ -150,7 +156,9 @@ typedef enum {
     NSNumber *end = [NSNumber numberWithInt:0];
     [resultArray addObject:end];
     
-    [self getResultStringFromArray:resultArray];
+    NSLog(@"%@", resultArray);
+    
+   // [self getResultStringFromArray:resultArray];
     
     
 }
@@ -172,7 +180,7 @@ typedef enum {
     
     NSError *error;
     NSArray *result = [[StorageManager sharedManager].managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    self.foundOLL = [result objectAtIndex:0];
+   // self.foundOLL = [result objectAtIndex:0];
     [self performSegueWithIdentifier:@"detail" sender:self];
     
 }
@@ -184,13 +192,32 @@ typedef enum {
 
 - (IBAction)topButtonPressed:(id)sender {
      self.currentFace = Top;
-    
+    self.topButton.backgroundColor = [UIColor grayColor];
+    /*
     UIImagePickerController *picturePicker = [[UIImagePickerController alloc] init];
     OverlayView *overlay = [[OverlayView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     [picturePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
     picturePicker.cameraOverlayView = overlay;
     [picturePicker setDelegate:self];
     [self presentViewController:picturePicker animated:YES completion:NULL];
+    */
+    
+     
+    
+    //For debugging Points
+    
+    self.topFace = [UIImage imageNamed:@"fishFace.png"];
+    self.frontFace = [UIImage imageNamed:@"fishFace.png"];
+    self.rightFace = [UIImage imageNamed:@"fishFace.png"];
+    self.backFace = [UIImage imageNamed:@"fishFace.png"];
+    self.leftFace = [UIImage imageNamed:@"fishFace.png"];
+    [self getCenterColor];
+    [self analyzeLayer];
+    
+    
+    
+    
+    
 }
 
 - (IBAction)frontButtonPressed:(id)sender {
@@ -244,15 +271,20 @@ typedef enum {
     
     UIImage *selectedImage = (UIImage *) [info objectForKey:
                                           UIImagePickerControllerOriginalImage];
-    UIImage *resizedImage = [selectedImage resizedImageToSize:CGSizeMake(320, 480)];
-    NSLog(@"%f is width and %f is height for orig", selectedImage.size.width, selectedImage.size.height);
-    NSLog(@"%f is w and %f is h for resized", resizedImage.size.width, resizedImage.size.height);
+    
+    //Need to flip XY for some goofy reason
+    UIImage *resizedImage = [selectedImage resizedImageToSize:CGSizeMake(480,320)];
+   // UIImageWriteToSavedPhotosAlbum(resizedImage, nil, nil, nil);
+
     
     
     switch (self.currentFace) {
         case Top:
             self.topFace = resizedImage;
+           // self.topFace = [UIImage imageNamed:@"asd.jpeg"];
             self.topButton.backgroundColor = [UIColor grayColor];
+           
+            
             break;
         case Front:
             self.frontFace = resizedImage;
@@ -306,6 +338,7 @@ typedef enum {
     
     
     CGPoint point = MidCenter;
+    NSLog(@"%f %f", point.x, point.y);
     NSMutableArray *redArray = [[NSMutableArray alloc] init];
     NSMutableArray *greenArray = [[NSMutableArray alloc] init];
     NSMutableArray *blueArray = [[NSMutableArray alloc] init];
@@ -313,7 +346,7 @@ typedef enum {
     
     
     //Take 30 samples of the RGB in this square
-    for(int i =0; i < numOfSamples; i++) {
+    for(int i =0; i < numOfSamples +1; i++) {
         int offset = 8*((w*round(point.y+i))+round(point.x+i));
         
         
@@ -338,7 +371,7 @@ typedef enum {
     int totalBlue=0;
     int totalAlpha=0;
     
-    for (int i = 0; i < numOfSamples; i++) {
+    for (int i = 0; i < numOfSamples +1; i++) {
         
         NSNumber *redTemp = [redArray objectAtIndex:i];
         totalRed += [redTemp integerValue];
@@ -365,6 +398,7 @@ typedef enum {
     
     color = [UIColor colorWithRed:(averageRed/255.0f) green:(averageGreen/255.0f) blue:(averageBlue/255.0f) alpha:(averageAlpha/255.0f)];
     NSLog(@" Center is %d %d %d", averageRed, averageGreen, averageBlue);
+    //self.deleteMe.backgroundColor = color;
     return color;
 }
 
@@ -428,9 +462,9 @@ typedef enum {
 }
 -(BOOL)checkColorWithOriginPoint:(CGPoint)point onFace:(UIImage *)face {
     UIColor *testColor = [self determineColorWithOriginPoint:point onFace:face];
-    
+    UIColor *centerColor = self.centerColor;
     CGFloat cred = 0.0, cgreen = 0.0, cblue = 0.0, calpha = 0.0;
-    [self.centerColor getRed:&cred green:&cgreen blue:&cblue alpha:&calpha];
+    [centerColor getRed:&cred green:&cgreen blue:&cblue alpha:&calpha];
     cred = cred * 255;
     cgreen = cgreen *255;
     cblue = cblue *255;
@@ -451,16 +485,16 @@ typedef enum {
     BOOL greenGood = NO;
     BOOL blueGood = NO;
     
-    if (tred < cred +25 && tred > cred -25) {
+    if (tred < cred +30 && tred > cred -30) {
         
         redGood = YES;
     }
-    if (tgreen < cgreen +25 && tgreen > cgreen -25) {
+    if (tgreen < cgreen +30 && tgreen > cgreen -30) {
         
         greenGood = YES;
     }
     
-    if (tblue < cblue + 25 && tblue > cblue - 25) {
+    if (tblue < cblue + 30 && tblue > cblue - 30) {
         
         blueGood = YES;
     }
@@ -553,6 +587,8 @@ typedef enum {
 	
     
     color = [UIColor colorWithRed:(averageRed/255.0f) green:(averageGreen/255.0f) blue:(averageBlue/255.0f) alpha:(averageAlpha/255.0f)];
+    
+   
     return color;
 }
 
