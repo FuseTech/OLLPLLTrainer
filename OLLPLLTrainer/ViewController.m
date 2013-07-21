@@ -45,23 +45,23 @@
 	// Do any additional setup after loading the view, typically from a nib.
    
    // self.topFace = [UIImage imageNamed:@"fishFace.png"];
-    UIImage *selectedImage = [UIImage imageNamed:@"yellowface.jpeg"];
-    self.cubeImage.image = selectedImage;
-    self.topFace = selectedImage;
+  //  UIImage *selectedImage = [UIImage imageNamed:@"yellowface.jpeg"];
+   // self.cubeImage.image = selectedImage;
+  //  self.topFace = selectedImage;
 
     
    // UIImage *resizedImage = [selectedImage resizedImageToSize:CGSizeMake(320, 480)];
    // self.cubeImage.image = resizedImage;
    // self.topFace = resizedImage;
     
-    self.centerColor = [self getCenterColor];
+   // self.centerColor = [self getCenterColor];
     /*
    int test =  [self checkColorWithOriginPoint:TopLeft onFace:self.topFace];
     int test2 = [self checkColorWithOriginPoint:TopCenter onFace:self.topFace];
     NSLog(@"result of test is %d", test);
     NSLog(@"result of test 2 id %d", test2);
      */
-    [self analyzeFace];
+   // [self analyzeFace];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -83,7 +83,7 @@
 
 - (IBAction)selectImagePressed:(id)sender {
     
-    /*
+    
     UIImagePickerController *picturePicker = [[UIImagePickerController alloc] init];
     OverlayView *overlay = [[OverlayView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     [picturePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
@@ -91,12 +91,14 @@
     [picturePicker setDelegate:self];
     
     [self presentViewController:picturePicker animated:YES completion:NULL];
-    */
+    
     
     //Need to take a picture with the overlay in place, and then reset the CGPoints for where to locate the pieces. Consider how this will vary on iPhone 5
+    /*
     UIImage *bigImage = self.topFace;
     UIImage *resizedImage = [bigImage resizedImageToSize:CGSizeMake(320, 480)];
     self.cubeImage.image = resizedImage;
+     */
     
     
 }
@@ -220,10 +222,12 @@
     
     UIImage *selectedImage = (UIImage *) [info objectForKey:
                                           UIImagePickerControllerOriginalImage];
+    UIImage *resized = [selectedImage resizedImageToSize:CGSizeMake(960,640)];
    // UIImage *resizedImage =  [[self class] imageWithImage:selectedImage scaledToSize:CGSizeMake(320,480)];
     NSLog(@"%f is width and %f is height for orig", selectedImage.size.width, selectedImage.size.height);
    // NSLog(@"%f is w and %f is h for resized", resizedImage.size.width, resizedImage.size.height);
-    
+    self.topFace = resized;
+    self.cubeImage.image = self.topFace;
     
    // self.topFace = resizedImage;
     
@@ -511,6 +515,17 @@
         return NO;
         
     }
+}
+
+- (void) touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event {
+
+	
+	UITouch* touch = [touches anyObject];
+	CGPoint point = [touch locationInView:self.view]; //where image was tapped
+    NSLog(@" %f, %f", point.x, point.y);
+//	self.lastColor = [self getPixelColorAtLocation:point];
+//	NSLog(@"color %@",lastColor);
+//	[pickedColorDelegate pickedColor:(UIColor*)self.lastColor];
 }
 
 @end
