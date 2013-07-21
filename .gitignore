@@ -2,3 +2,7 @@
 OLLPLLTrainer.xcodeproj/xcuserdata/FuseTech.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 
 *.xcbkptlist
+
+Pods/Pods.xcodeproj/xcuserdata/FuseTech.xcuserdatad/xcschemes/xcschememanagement.plist
+
+*.plist
