@@ -46,6 +46,7 @@ typedef enum {
 @property (nonatomic) currentFace currentFace;
 
 @property (weak, nonatomic) IBOutlet UIView *deleteMe;
+@property (weak, nonatomic) IBOutlet UIView *testedView;
 
 
 - (IBAction)topButtonPressed:(id)sender;
@@ -92,7 +93,7 @@ typedef enum {
 -(void)viewDidAppear:(BOOL)animated {
     //Proceed once all images have been taken
     if (self.topFace && self.frontFace && self.rightFace && self.backFace && self.leftFace) {
-       //self.centerColor = [self getCenterColor];
+        self.centerColor = [self getCenterColor];
         [self analyzeLayer];
     }
 }
@@ -191,22 +192,31 @@ typedef enum {
 
 - (IBAction)topButtonPressed:(id)sender {
      self.currentFace = Top;
-    
+    self.topButton.backgroundColor = [UIColor grayColor];
+    /*
     UIImagePickerController *picturePicker = [[UIImagePickerController alloc] init];
     OverlayView *overlay = [[OverlayView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     [picturePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
     picturePicker.cameraOverlayView = overlay;
     [picturePicker setDelegate:self];
     [self presentViewController:picturePicker animated:YES completion:NULL];
+    */
     
      
     
     //For debugging Points
-    /*
-    self.topFace = [UIImage imageNamed:@"qwe2.png"];
-    self.topButton.backgroundColor = [UIColor grayColor];
+    
+    self.topFace = [UIImage imageNamed:@"fishFace.png"];
+    self.frontFace = [UIImage imageNamed:@"fishFace.png"];
+    self.rightFace = [UIImage imageNamed:@"fishFace.png"];
+    self.backFace = [UIImage imageNamed:@"fishFace.png"];
+    self.leftFace = [UIImage imageNamed:@"fishFace.png"];
     [self getCenterColor];
-     */
+    [self analyzeLayer];
+    
+    
+    
+    
     
 }
 
@@ -273,7 +283,7 @@ typedef enum {
             self.topFace = resizedImage;
            // self.topFace = [UIImage imageNamed:@"asd.jpeg"];
             self.topButton.backgroundColor = [UIColor grayColor];
-            [self getCenterColor];
+           
             
             break;
         case Front:
@@ -388,7 +398,7 @@ typedef enum {
     
     color = [UIColor colorWithRed:(averageRed/255.0f) green:(averageGreen/255.0f) blue:(averageBlue/255.0f) alpha:(averageAlpha/255.0f)];
     NSLog(@" Center is %d %d %d", averageRed, averageGreen, averageBlue);
-    self.deleteMe.backgroundColor = color;
+    //self.deleteMe.backgroundColor = color;
     return color;
 }
 
@@ -452,9 +462,9 @@ typedef enum {
 }
 -(BOOL)checkColorWithOriginPoint:(CGPoint)point onFace:(UIImage *)face {
     UIColor *testColor = [self determineColorWithOriginPoint:point onFace:face];
-    
+    UIColor *centerColor = self.centerColor;
     CGFloat cred = 0.0, cgreen = 0.0, cblue = 0.0, calpha = 0.0;
-    [self.centerColor getRed:&cred green:&cgreen blue:&cblue alpha:&calpha];
+    [centerColor getRed:&cred green:&cgreen blue:&cblue alpha:&calpha];
     cred = cred * 255;
     cgreen = cgreen *255;
     cblue = cblue *255;
@@ -577,8 +587,8 @@ typedef enum {
 	
     
     color = [UIColor colorWithRed:(averageRed/255.0f) green:(averageGreen/255.0f) blue:(averageBlue/255.0f) alpha:(averageAlpha/255.0f)];
-    self.deleteMe.backgroundColor = color;
-    NSLog(@"%@", color);
+    
+   
     return color;
 }
 
