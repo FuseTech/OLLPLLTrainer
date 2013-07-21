@@ -6,3 +6,7 @@ OLLPLLTrainer.xcodeproj/xcuserdata/FuseTech.xcuserdatad/xcdebugger/Breakpoints_v
 Pods/Pods.xcodeproj/xcuserdata/FuseTech.xcuserdatad/xcschemes/xcschememanagement.plist
 
 *.plist
+
+*.xcuserstate
+
+.DS_Store
