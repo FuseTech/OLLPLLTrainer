@@ -49,7 +49,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *botPref = [defaults objectForKey:@"Bottom"];
     
-    NSLog(@"%@ is botPref and %@ is frontPref", botPref, [defaults objectForKey:@"Front"]);
+   
     if ([botPref isEqualToString:@"White"]) {
         self.bottomFaceSegment.selectedSegmentIndex = 0;
         self.bottomColor = @"White";
@@ -109,46 +109,20 @@
     [self.frontFaceSegment setEnabled:YES forSegmentAtIndex:3];
     [self.frontFaceSegment setEnabled:YES forSegmentAtIndex:4];
     [self.frontFaceSegment setEnabled:YES forSegmentAtIndex:5];
+    [self setColors];
+   
     
-    
-    if ([self.bottomColor isEqualToString:@"Yellow"]) {
-        self.topColor = @"White";
-     
-        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:0];
-        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:5];
-    } else if ([self.bottomColor isEqualToString:@"White"]) {
-        self.topColor = @"Yellow";
-        
-        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:0];
-        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:5];
-    } else if ([self.bottomColor isEqualToString:@"Red"]) {
-        self.topColor = @"Orange";
-       
-        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:4];
-        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:2];
-    } else if ([self.bottomColor isEqualToString:@"Orange"]) {
-        self.topColor = @"Red";
-     
-        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:4];
-        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:2];
-    } else if ([self.bottomColor isEqualToString:@"Blue"]) {
-        self.topColor = @"Green";
-      
-        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:3];
-        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:1];
-    } else if ([self.bottomColor isEqualToString:@"Green"]) {
-        self.topColor = @"Blue";
-    
-        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:3];
-        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:1];
-    }
-    
-    NSLog(@"%@ is bottom, %@ is top", self.bottomColor, self.topColor);
+   
     
 }
 
 - (IBAction)frontFaceChanged:(id)sender {
     self.frontColor = [self.frontFaceSegment titleForSegmentAtIndex:self.frontFaceSegment.selectedSegmentIndex];
+    [self setColors];
+
+}
+
+-(void)setColors {
     if ([self.frontColor isEqualToString:@"Yellow"]) {
         self.backColor = @"White";
     } else if ([self.frontColor isEqualToString:@"White"]) {
@@ -162,7 +136,39 @@
     } else if ([self.frontColor isEqualToString:@"Green"]) {
         self.backColor = @"Blue";
     }
-    NSLog(@"%@ is front, %@ is back", self.frontColor, self.backColor);
+    
+    if ([self.bottomColor isEqualToString:@"Yellow"]) {
+        self.topColor = @"White";
+        
+        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:0];
+        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:5];
+    } else if ([self.bottomColor isEqualToString:@"White"]) {
+        self.topColor = @"Yellow";
+        
+        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:0];
+        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:5];
+    } else if ([self.bottomColor isEqualToString:@"Red"]) {
+        self.topColor = @"Orange";
+        
+        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:4];
+        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:2];
+    } else if ([self.bottomColor isEqualToString:@"Orange"]) {
+        self.topColor = @"Red";
+        
+        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:4];
+        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:2];
+    } else if ([self.bottomColor isEqualToString:@"Blue"]) {
+        self.topColor = @"Green";
+        
+        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:3];
+        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:1];
+    } else if ([self.bottomColor isEqualToString:@"Green"]) {
+        self.topColor = @"Blue";
+        
+        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:3];
+        [self.frontFaceSegment setEnabled:NO forSegmentAtIndex:1];
+    }
+    
 }
 - (IBAction)donePressed:(id)sender {
     //Take the values of the segments and determine the color of all faces. Store in user defaults for access later in program
@@ -171,14 +177,13 @@
         [alert show];
         return;
     }
-    
+    [self setColors];
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setObject:self.bottomColor forKey:@"Bottom"];
-    NSLog(@"%@ is self.bottomcolor", self.bottomColor);
     [prefs setObject:self.topColor forKey:@"Top"];
     [prefs setObject:self.frontColor forKey:@"Front"];
-    NSLog(@"%@ is self.frontColor", self.frontColor);
     [prefs setObject:self.backColor forKey:@"Back"];
+
     
     //Determine the left and right faces
     if ([self.bottomColor isEqualToString:@"Yellow"]) {
@@ -266,6 +271,7 @@
             self.leftColor = @"Yellow";
         }
     }
+    
     
     [prefs setObject:self.rightColor forKey:@"Right"];
     [prefs setObject:self.leftColor forKey:@"Left"];
