@@ -1,8 +1,8 @@
 //
 //  OLL.h
-//  OLLPLL
+//  OLLPLLTrainer
 //
-//  Created by Weston Chambers on 7/18/13.
+//  Created by Weston Chambers on 7/21/13.
 //  Copyright (c) 2013 Weston Chambers. All rights reserved.
 //
 
@@ -13,11 +13,9 @@
 
 @interface OLL : NSManagedObject
 
-@property (nonatomic, retain) id image;
 @property (nonatomic, retain) NSString * algorithm;
-@property (nonatomic, retain) NSString * key;
-@property (nonatomic, retain) NSString * notes;
+@property (nonatomic, retain) id image;
+@property (nonatomic, retain) NSString * desc;
 @property (nonatomic, retain) UserOLL *userOLLData;
-@property (nonatomic, retain) NSString * binary;
 
 @end

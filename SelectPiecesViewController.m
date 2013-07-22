@@ -371,20 +371,43 @@
     [self getOLLInformation:result];
 }
 
--(void)getOLLInformation:(NSString *)OLLKey {
-    NSLog(@"%@", OLLKey);
+-(void)getOLLInformation:(NSString *)binaryString {
+   //Based on the current configuration figure out which iteration of the OLL is required
      NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-     NSEntityDescription *entity = [NSEntityDescription entityForName:@"OLL" inManagedObjectContext:[[StorageManager sharedManager] managedObjectContext]];
+     NSEntityDescription *entity = [NSEntityDescription entityForName:@"binary" inManagedObjectContext:[[StorageManager sharedManager] managedObjectContext]];
      [fetchRequest setEntity:entity];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"binary == %@", OLLKey];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"binary == %@", binaryString];
     [fetchRequest setPredicate:predicate];
-    
      NSError *error;
      NSArray *result = [[[StorageManager sharedManager]managedObjectContext] executeFetchRequest:fetchRequest error:&error];
      
-     self.selectedOLL = [result objectAtIndex:0];
-    NSLog(@"%@ is OLLKey", self.selectedOLL.key);
+    NSString *foundOLL = [result objectAtIndex:1];
+    NSString *setUp = [result objectAtIndex:2];
     
+    
+    NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"OLL" inManagedObjectContext:[[StorageManager sharedManager] managedObjectContext]];
+    [fetchRequest2 setEntity:entity2];
+    NSPredicate *predicate2 = [NSPredicate predicateWithFormat:@"key == %@", foundOLL];
+    [fetchRequest2 setPredicate:predicate2];
+    NSError *error2;
+    NSArray *result2 = [[[StorageManager sharedManager] managedObjectContext] executeFetchRequest:fetchRequest2 error:&error2];
+    
+    self.selectedOLL = [result2 objectAtIndex:0];
+   
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Before you move on" message:[NSString stringWithFormat:@"Complete this prior to moving on: %@", setUp] delegate:nil cancelButtonTitle:@"Done" otherButtonTitles: nil];
+    [alert show];
+    
+    [self performSegueWithIdentifier:@"detailSegue" sender:self];
+    
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"detailSegue"]) {
+        [segue.destinationViewController setDetailOLL:self.selectedOLL];
+        
+    }
     
 }
 @end
