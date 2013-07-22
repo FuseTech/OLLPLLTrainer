@@ -213,7 +213,7 @@
     if (![self.currentFace isEqualToString: @"Left"]) {
         switch (_face) {
             case 0:
-                [self.topArray insertObject:[NSNumber numberWithBool:self.iTrue] atIndex:0];
+                [self.topArray insertObject:[NSNumber numberWithBool:self.aTrue] atIndex:0];
                 [self.topArray insertObject:[NSNumber numberWithBool:self.bTrue] atIndex:1];
                 [self.topArray insertObject:[NSNumber numberWithBool:self.cTrue] atIndex:2];
                 [self.topArray insertObject:[NSNumber numberWithBool:self.dTrue] atIndex:3];
@@ -357,7 +357,7 @@
     [resultArray insertObject:[NSNumber numberWithInt:0] atIndex:24];
     
     [self createResultStringWithArray:resultArray];
-    
+    //[self getOLLInformation:@"0001010100011100011001000"];
     
     
 }
@@ -367,11 +367,12 @@
     for (int i =0; i < [resultArray count]; i++) {
         result = [result stringByAppendingString:[NSString stringWithFormat:@"%@", [resultArray objectAtIndex:i]]];
     }
+    
     [self getOLLInformation:result];
 }
 
 -(void)getOLLInformation:(NSString *)OLLKey {
-    
+    NSLog(@"%@", OLLKey);
      NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
      NSEntityDescription *entity = [NSEntityDescription entityForName:@"OLL" inManagedObjectContext:[[StorageManager sharedManager] managedObjectContext]];
      [fetchRequest setEntity:entity];
@@ -382,6 +383,7 @@
      NSArray *result = [[[StorageManager sharedManager]managedObjectContext] executeFetchRequest:fetchRequest error:&error];
      
      self.selectedOLL = [result objectAtIndex:0];
+    NSLog(@"%@ is OLLKey", self.selectedOLL.key);
     
     
 }

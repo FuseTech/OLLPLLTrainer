@@ -39,6 +39,7 @@
 		4C824F6A17964F5800C73849 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C824F4C17964F5800C73849 /* UIKit.framework */; };
 		4C824F7217964F5800C73849 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C824F7017964F5800C73849 /* InfoPlist.strings */; };
 		4C824F7417964F5800C73849 /* OLLPLLTrainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C824F7317964F5800C73849 /* OLLPLLTrainerTests.m */; };
+		4CA1D80A179CECE300C13ED4 /* OLLPLLImport.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4CA1D809179CECE300C13ED4 /* OLLPLLImport.sqlite */; };
 		4CD6C3B5179BB5CA0034ACF0 /* SelectPiecesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6C3B4179BB5CA0034ACF0 /* SelectPiecesViewController.m */; };
 		DF8B5FB2C7564CDF8B5023E6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B691DA97020C43EB8511F178 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -104,6 +105,7 @@
 		4C824F6F17964F5800C73849 /* OLLPLLTrainerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OLLPLLTrainerTests-Info.plist"; sourceTree = "<group>"; };
 		4C824F7117964F5800C73849 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C824F7317964F5800C73849 /* OLLPLLTrainerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OLLPLLTrainerTests.m; sourceTree = "<group>"; };
+		4CA1D809179CECE300C13ED4 /* OLLPLLImport.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = OLLPLLImport.sqlite; path = "../../../Library/Developer/Xcode/DerivedData/OLLPLLImport-garcufingvayxgdsmpzopumownal/Build/Products/Debug/OLLPLLImport.sqlite"; sourceTree = "<group>"; };
 		4CD6C3B3179BB5CA0034ACF0 /* SelectPiecesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectPiecesViewController.h; path = ../SelectPiecesViewController.h; sourceTree = "<group>"; };
 		4CD6C3B4179BB5CA0034ACF0 /* SelectPiecesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectPiecesViewController.m; path = ../SelectPiecesViewController.m; sourceTree = "<group>"; };
 		B691DA97020C43EB8511F178 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,8 +196,8 @@
 			children = (
 				4C824F5717964F5800C73849 /* AppDelegate.h */,
 				4C824F5817964F5800C73849 /* AppDelegate.m */,
-				4C3ACC8D1798BFD300772067 /* StorageManager.m */,
 				4C3ACC8E1798BFD300772067 /* StorageManager.h */,
+				4C3ACC8D1798BFD300772067 /* StorageManager.m */,
 				4C3ACC8F1798BFD300772067 /* AlgorithmData.xcdatamodeld */,
 				4C3ACC911798BFD300772067 /* PLL.h */,
 				4C3ACC921798BFD300772067 /* PLL.m */,
@@ -205,6 +207,7 @@
 				4C3ACC961798BFD300772067 /* OLL.m */,
 				4C3ACC971798BFD300772067 /* UserOLL.h */,
 				4C3ACC981798BFD300772067 /* UserOLL.m */,
+				4CA1D809179CECE300C13ED4 /* OLLPLLImport.sqlite */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				4C824F6117964F5800C73849 /* Images.xcassets in Resources */,
 				4C824F5317964F5800C73849 /* InfoPlist.strings in Resources */,
 				4C824F5C17964F5800C73849 /* Main.storyboard in Resources */,
+				4CA1D80A179CECE300C13ED4 /* OLLPLLImport.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
