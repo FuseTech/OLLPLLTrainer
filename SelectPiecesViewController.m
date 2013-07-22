@@ -10,6 +10,7 @@
 #import "StorageManager.h"
 #import "OLLDetailViewController.h"
 #import "OLL.h"
+#import "Binary.h"
 
 @interface SelectPiecesViewController ()
 @property (weak, nonatomic) IBOutlet UIView *aView;
@@ -31,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *aButton;
 @property (weak, nonatomic) IBOutlet UIButton *bButton;
 @property (weak, nonatomic) IBOutlet UIButton *cButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *currentFaceLabel;
@@ -73,6 +75,7 @@
 - (IBAction)nextPressed:(id)sender;
 
 @property (nonatomic) OLL *selectedOLL;
+@property (nonatomic) Binary *thisBinary;
 
 
 
@@ -117,7 +120,6 @@
 
 -(UIColor *)colorFromString:(NSString *)colorString {
     UIColor *color = nil;
-    NSLog(@"%@ is colorString", colorString);
     if ([colorString isEqualToString:@"Yellow"]) {
         color = [UIColor yellowColor];
     } else if ([colorString isEqualToString:@"White"]) {
@@ -269,6 +271,7 @@
                 [self.backArray insertObject:[NSNumber numberWithBool:self.aTrue] atIndex:0];
                 [self.backArray insertObject:[NSNumber numberWithBool:self.bTrue] atIndex:1];
                 [self.backArray insertObject:[NSNumber numberWithBool:self.cTrue] atIndex:2];
+                [self.nextButton setTitle:@"Analyze!" forState:UIControlStateNormal];
             default:
                 break;
         }
@@ -399,39 +402,47 @@
     for (int i =0; i < [resultArray count]; i++) {
         result = [result stringByAppendingString:[NSString stringWithFormat:@"%@", [resultArray objectAtIndex:i]]];
     }
-    
+    NSLog(@"%@", result);
     [self getOLLInformation:result];
 }
 
 -(void)getOLLInformation:(NSString *)binaryString {
    //Based on the current configuration figure out which iteration of the OLL is required
-     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-     NSEntityDescription *entity = [NSEntityDescription entityForName:@"binary" inManagedObjectContext:[[StorageManager sharedManager] managedObjectContext]];
-     [fetchRequest setEntity:entity];
+    NSError *error;
+    NSFetchRequest *binaryRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *binaryEntity = [NSEntityDescription entityForName:@"Binary" inManagedObjectContext:[[StorageManager sharedManager]managedObjectContext]];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"binary == %@", binaryString];
-    [fetchRequest setPredicate:predicate];
-     NSError *error;
-     NSArray *result = [[[StorageManager sharedManager]managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-     
-    NSString *foundOLL = [result objectAtIndex:1];
-    NSString *setUp = [result objectAtIndex:2];
+    [binaryRequest setEntity:binaryEntity];
+    [binaryRequest setPredicate:predicate];
     
+    NSArray *binaryResult = [[[StorageManager sharedManager] managedObjectContext] executeFetchRequest:binaryRequest error:&error];
+    self.thisBinary = [binaryResult objectAtIndex:0];
+    OLL *thisOLL = self.thisBinary.oll;
+    self.selectedOLL = thisOLL;
+    NSLog(@"%@ is the algorithm for this OLL", self.selectedOLL.algorithm);
     
-    NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"OLL" inManagedObjectContext:[[StorageManager sharedManager] managedObjectContext]];
-    [fetchRequest2 setEntity:entity2];
-    NSPredicate *predicate2 = [NSPredicate predicateWithFormat:@"key == %@", foundOLL];
-    [fetchRequest2 setPredicate:predicate2];
-    NSError *error2;
-    NSArray *result2 = [[[StorageManager sharedManager] managedObjectContext] executeFetchRequest:fetchRequest2 error:&error2];
-    
-    self.selectedOLL = [result2 objectAtIndex:0];
-   
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Before you move on" message:[NSString stringWithFormat:@"Complete this prior to moving on: %@", setUp] delegate:nil cancelButtonTitle:@"Done" otherButtonTitles: nil];
-    [alert show];
+    [self showSetupAlert];
     
     [self performSegueWithIdentifier:@"detailSegue" sender:self];
     
+    
+}
+-(void)showSetupAlert{
+    if ([self.thisBinary.setup  isEqualToString: @"0"]) {
+        return;
+    } else if ([self.thisBinary.setup isEqualToString:@"1"]) {
+        //Need to T' to get to desired position
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:@"Before proceeding, please rotate the top face counter clockwise one time" delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
+        [alert show];
+    } else if ([self.thisBinary.setup isEqualToString:@"2"]) {
+        // T2
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:@"Before proceeding, please rotate the top face twice (in either direction)" delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles:nil];
+        [alert show];
+    }else if ([self.thisBinary.setup isEqualToString:@"3"]) {
+        //T
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:@"Before proceeding, please rotate the top face clockwise one time" delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
+        [alert show];
+    }
     
 }
 

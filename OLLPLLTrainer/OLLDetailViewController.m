@@ -10,6 +10,10 @@
 #import "OLL.h"
 
 @interface OLLDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *OLLimageView;
+@property (weak, nonatomic) IBOutlet UILabel *OLLKeyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *OLLDescLabel;
+@property (weak, nonatomic) IBOutlet UILabel *algorithmLabel;
 
 @end
 
@@ -28,6 +32,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.OLLKeyLabel.text = self.detailOLL.key;
+    self.OLLDescLabel.text = self.detailOLL.desc;
+    
+    //Just used for testing. Bulk will be in next VC
+    self.algorithmLabel.text = self.detailOLL.algorithm;
+    
 
 }
 

@@ -14,12 +14,12 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *frontFaceSegment;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *bottomFaceSegment;
 
-@property (nonatomic) NSString *bottomColor;
-@property (nonatomic) NSString *frontColor;
-@property (nonatomic) NSString *rightColor;
-@property (nonatomic) NSString *topColor;
-@property (nonatomic) NSString *leftColor;
-@property (nonatomic) NSString *backColor;
+@property (nonatomic, strong) NSString *bottomColor;
+@property (nonatomic, strong) NSString *frontColor;
+@property (nonatomic, strong) NSString *rightColor;
+@property (nonatomic, strong) NSString *topColor;
+@property (nonatomic, strong) NSString *leftColor;
+@property (nonatomic, strong) NSString *backColor;
 
 - (IBAction)donePressed:(id)sender;
 
@@ -42,40 +42,54 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *botPref = [defaults objectForKey:@"Bottom"];
+    
+    NSLog(@"%@ is botPref and %@ is frontPref", botPref, [defaults objectForKey:@"Front"]);
     if ([botPref isEqualToString:@"White"]) {
         self.bottomFaceSegment.selectedSegmentIndex = 0;
+        self.bottomColor = @"White";
     } else if ([botPref isEqualToString:@"Yellow"]){
         self.bottomFaceSegment.selectedSegmentIndex = 5;
+        self.bottomColor = @"Yellow";
     } else if ([botPref isEqualToString:@"Green"]) {
         self.bottomFaceSegment.selectedSegmentIndex = 1;
+        self.bottomColor = @"Green";
     } else if ([botPref isEqualToString:@"Orange"]) {
         self.bottomFaceSegment.selectedSegmentIndex = 2;
+        self.bottomColor = @"Orange";
     } else if ([botPref isEqualToString:@"Blue"]) {
         self.bottomFaceSegment.selectedSegmentIndex = 3;
+        self.bottomColor = @"Blue";
     } else if ([botPref isEqualToString:@"Red"]) {
         self.bottomFaceSegment.selectedSegmentIndex = 4;
+        self.bottomColor = @"Red";
     }
     
     NSString *frontPref = [defaults objectForKey:@"Front"];
     if ([frontPref isEqualToString:@"White"]) {
         self.frontFaceSegment.selectedSegmentIndex = 0;
+        self.frontColor = @"White";
     } else if ([frontPref isEqualToString:@"Yellow"]){
         self.frontFaceSegment.selectedSegmentIndex = 5;
+        self.frontColor = @"Yellow";
     } else if ([frontPref isEqualToString:@"Green"]) {
         self.frontFaceSegment.selectedSegmentIndex = 1;
+        self.frontColor = @"Green";
     } else if ([frontPref isEqualToString:@"Orange"]) {
         self.frontFaceSegment.selectedSegmentIndex = 2;
+        self.frontColor = @"Orange";
     } else if ([frontPref isEqualToString:@"Blue"]) {
         self.frontFaceSegment.selectedSegmentIndex = 3;
+        self.frontColor = @"Blue";
     } else if ([frontPref isEqualToString:@"Red"]) {
         self.frontFaceSegment.selectedSegmentIndex = 4;
+        self.frontColor = @"Red";
     }
-}
-
--(void)viewWillDisappear:(BOOL)animated {
-   
     
     
 }
@@ -160,8 +174,10 @@
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setObject:self.bottomColor forKey:@"Bottom"];
+    NSLog(@"%@ is self.bottomcolor", self.bottomColor);
     [prefs setObject:self.topColor forKey:@"Top"];
     [prefs setObject:self.frontColor forKey:@"Front"];
+    NSLog(@"%@ is self.frontColor", self.frontColor);
     [prefs setObject:self.backColor forKey:@"Back"];
     
     //Determine the left and right faces
@@ -253,6 +269,7 @@
     
     [prefs setObject:self.rightColor forKey:@"Right"];
     [prefs setObject:self.leftColor forKey:@"Left"];
+    [prefs synchronize];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
