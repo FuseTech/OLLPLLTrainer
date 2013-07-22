@@ -21,3 +21,5 @@ Pods/Pods.xcodeproj/xcuserdata/FuseTech.xcuserdatad/xcschemes/xcschememanagement
 
 .DS_Store
 >>>>>>> Develop
+
+*.xcbkptlist

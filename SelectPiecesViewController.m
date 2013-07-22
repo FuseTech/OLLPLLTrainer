@@ -10,6 +10,7 @@
 #import "StorageManager.h"
 #import "OLLDetailViewController.h"
 #import "OLL.h"
+#import "Binary.h"
 
 @interface SelectPiecesViewController ()
 @property (weak, nonatomic) IBOutlet UIView *aView;
@@ -31,10 +32,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *aButton;
 @property (weak, nonatomic) IBOutlet UIButton *bButton;
 @property (weak, nonatomic) IBOutlet UIButton *cButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *currentFaceLabel;
-@property (nonatomic) UIColor *faceColor;
+@property (nonatomic) UIColor *botColor;
+@property (nonatomic) UIColor *frontColor;
+@property (nonatomic) UIColor *rightColor;
+@property (nonatomic) UIColor *backColor;
+@property (nonatomic) UIColor *leftColor;
 
 @property (weak, nonatomic) NSString *currentFace;
 @property (nonatomic, strong) NSMutableArray *topArray;
@@ -69,6 +75,7 @@
 - (IBAction)nextPressed:(id)sender;
 
 @property (nonatomic) OLL *selectedOLL;
+@property (nonatomic) Binary *thisBinary;
 
 
 
@@ -93,8 +100,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    //Set this based on settings initially, for now, start with yellow
-    self.faceColor = [UIColor yellowColor];
+    //Get the colors from User defaults/settings menu
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    self.botColor = [self colorFromString:[defaults objectForKey:@"Bottom"]];
+    self.frontColor = [self colorFromString:[defaults objectForKey:@"Front"]];
+    self.rightColor = [self colorFromString:[defaults objectForKey:@"Right"]];
+    self.backColor = [self colorFromString:[defaults objectForKey:@"Back"]];
+    self.leftColor = [self colorFromString:[defaults objectForKey:@"Left"]];
+ 
     _face = 0;
     self.topArray = [[NSMutableArray alloc] init];
     self.frontArray = [[NSMutableArray alloc] init];
@@ -102,6 +116,26 @@
     self.backArray = [[NSMutableArray alloc] init];
     self.leftArray = [[NSMutableArray alloc] init];
    
+}
+
+-(UIColor *)colorFromString:(NSString *)colorString {
+    UIColor *color = nil;
+    if ([colorString isEqualToString:@"Yellow"]) {
+        color = [UIColor yellowColor];
+    } else if ([colorString isEqualToString:@"White"]) {
+        color = [UIColor whiteColor];
+    } else if ([colorString isEqualToString:@"Green"]) {
+        color = [UIColor greenColor];
+    } else if ([colorString isEqualToString:@"Orange"]) {
+        color = [UIColor orangeColor];
+    } else if ([colorString isEqualToString:@"Blue"]) {
+        color = [UIColor blueColor];
+    } else if ([colorString isEqualToString:@"Red"]) {
+        color = [UIColor redColor];
+    }
+    
+    return color;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -119,10 +153,10 @@
 
 - (IBAction)aPressed:(id)sender {
     if (!self.aTrue) {
-    self.aView.backgroundColor = self.faceColor;
+    self.aView.backgroundColor = self.botColor;
     self.aTrue = YES;
     } else if (self.aTrue) {
-        self.aView.backgroundColor = [UIColor whiteColor];
+        self.aView.backgroundColor = [UIColor darkGrayColor];
         self.aTrue = NO;
     }
     
@@ -131,80 +165,80 @@
 
 - (IBAction)bPressed:(id)sender {
     if (!self.bTrue) {
-        self.bView.backgroundColor = self.faceColor;
+        self.bView.backgroundColor = self.botColor;
         self.bTrue = YES;
     } else if (self.bTrue) {
-        self.bView.backgroundColor = [UIColor whiteColor];
+        self.bView.backgroundColor = [UIColor darkGrayColor];
         self.bTrue = NO;
     }
 }
 
 - (IBAction)cPressed:(id)sender {
     if (!self.cTrue) {
-        self.cView.backgroundColor = self.faceColor;
+        self.cView.backgroundColor = self.botColor;
         self.cTrue = YES;
     } else if (self.cTrue) {
-        self.cView.backgroundColor = [UIColor whiteColor];
+        self.cView.backgroundColor = [UIColor darkGrayColor];
         self.cTrue = NO;
     }
 }
 
 - (IBAction)dPressed:(id)sender {
     if (!self.dTrue) {
-        self.dView.backgroundColor = self.faceColor;
+        self.dView.backgroundColor = self.botColor;
         self.dTrue = YES;
     } else if (self.dTrue) {
-        self.dView.backgroundColor = [UIColor whiteColor];
+        self.dView.backgroundColor = [UIColor darkGrayColor];
         self.dTrue = NO;
     }
 }
 
 - (IBAction)ePressed:(id)sender {
     if (!self.eTrue) {
-        self.eView.backgroundColor = self.faceColor;
+        self.eView.backgroundColor = self.botColor;
         self.eTrue = YES;
     } else if (self.eTrue) {
-        self.eView.backgroundColor = [UIColor whiteColor];
+        self.eView.backgroundColor = [UIColor darkGrayColor];
         self.eTrue = NO;
     }
 }
 
 - (IBAction)fPressed:(id)sender {
     if (!self.fTrue) {
-        self.fView.backgroundColor = self.faceColor;
+        self.fView.backgroundColor = self.botColor;
         self.fTrue = YES;
     } else if (self.fTrue) {
-        self.fView.backgroundColor = [UIColor whiteColor];
+        self.fView.backgroundColor = [UIColor darkGrayColor];
         self.fTrue = NO;
     }
 }
 
 - (IBAction)gPressed:(id)sender {
     if (!self.gTrue) {
-        self.gView.backgroundColor = self.faceColor;
+        self.gView.backgroundColor = self.botColor;
         self.gTrue = YES;
     } else if (self.gTrue) {
-        self.gView.backgroundColor = [UIColor whiteColor];
+        self.gView.backgroundColor = [UIColor darkGrayColor];
         self.gTrue = NO;
     }
 }
 
 - (IBAction)hPressed:(id)sender {
     if (!self.hTrue) {
-        self.hView.backgroundColor = self.faceColor;
+        self.hView.backgroundColor = self.botColor;
         self.hTrue = YES;
     } else if (self.hTrue) {
-        self.hView.backgroundColor = [UIColor whiteColor];
+        self.hView.backgroundColor = [UIColor darkGrayColor];
         self.hTrue = NO;
     }
 }
 
 - (IBAction)iPressed:(id)sender {
     if (!self.iTrue) {
-        self.iView.backgroundColor = self.faceColor;
+        self.iView.backgroundColor = self.botColor;
         self.iTrue = YES;
     } else if (self.iTrue) {
-        self.iView.backgroundColor = [UIColor whiteColor];
+        self.iView.backgroundColor = [UIColor darkGrayColor];
         self.iTrue = NO;
     }
 }
@@ -237,6 +271,7 @@
                 [self.backArray insertObject:[NSNumber numberWithBool:self.aTrue] atIndex:0];
                 [self.backArray insertObject:[NSNumber numberWithBool:self.bTrue] atIndex:1];
                 [self.backArray insertObject:[NSNumber numberWithBool:self.cTrue] atIndex:2];
+                [self.nextButton setTitle:@"Analyze!" forState:UIControlStateNormal];
             default:
                 break;
         }
@@ -256,9 +291,9 @@
     self.aTrue = 0;
     self.bTrue = 0;
     self.cTrue = 0;
-    self.aView.backgroundColor = [UIColor whiteColor];
-    self.bView.backgroundColor = [UIColor whiteColor];
-    self.cView.backgroundColor = [UIColor whiteColor];
+    self.aView.backgroundColor = [UIColor darkGrayColor];
+    self.bView.backgroundColor = [UIColor darkGrayColor];
+    self.cView.backgroundColor = [UIColor darkGrayColor];
     self.dButton.enabled = NO;
     self.eButton.enabled = NO;
     self.fButton.enabled = NO;
@@ -279,45 +314,45 @@
             
             self.currentFace = @"Front";
             self.currentFaceLabel.text = @"Front Face";
-            self.dView.backgroundColor = [UIColor greenColor];
-            self.eView.backgroundColor = [UIColor greenColor];
-            self.fView.backgroundColor = [UIColor greenColor];
-            self.gView.backgroundColor = [UIColor greenColor];
-            self.hView.backgroundColor = [UIColor greenColor];
-            self.iView.backgroundColor = [UIColor greenColor];
+            self.dView.backgroundColor = self.frontColor;
+            self.eView.backgroundColor = self.frontColor;
+            self.fView.backgroundColor = self.frontColor;
+            self.gView.backgroundColor = self.frontColor;
+            self.hView.backgroundColor = self.frontColor;
+            self.iView.backgroundColor = self.frontColor;
             break;
         case 2:
             
             self.currentFace = @"Right";
             self.currentFaceLabel.text = @"Right Face";
-            self.dView.backgroundColor = [UIColor orangeColor];
-            self.eView.backgroundColor = [UIColor orangeColor];
-            self.fView.backgroundColor = [UIColor orangeColor];
-            self.gView.backgroundColor = [UIColor orangeColor];
-            self.hView.backgroundColor = [UIColor orangeColor];
-            self.iView.backgroundColor = [UIColor orangeColor];
+            self.dView.backgroundColor = self.rightColor;
+            self.eView.backgroundColor = self.rightColor;
+            self.fView.backgroundColor = self.rightColor;
+            self.gView.backgroundColor = self.rightColor;
+            self.hView.backgroundColor = self.rightColor;
+            self.iView.backgroundColor = self.rightColor;
             break;
         case 3:
             
             self.currentFace = @"Back";
             self.currentFaceLabel.text = @"Back Face";
-            self.dView.backgroundColor = [UIColor blueColor];
-            self.eView.backgroundColor = [UIColor blueColor];
-            self.fView.backgroundColor = [UIColor blueColor];
-            self.gView.backgroundColor = [UIColor blueColor];
-            self.hView.backgroundColor = [UIColor blueColor];
-            self.iView.backgroundColor = [UIColor blueColor];
+            self.dView.backgroundColor = self.backColor;
+            self.eView.backgroundColor = self.backColor;
+            self.fView.backgroundColor = self.backColor;
+            self.gView.backgroundColor = self.backColor;
+            self.hView.backgroundColor = self.backColor;
+            self.iView.backgroundColor = self.backColor;
             break;
         case 4:
             
             self.currentFace = @"Left";
             self.currentFaceLabel.text = @"Left Face";
-            self.dView.backgroundColor = [UIColor redColor];
-            self.eView.backgroundColor = [UIColor redColor];
-            self.fView.backgroundColor = [UIColor redColor];
-            self.gView.backgroundColor = [UIColor redColor];
-            self.hView.backgroundColor = [UIColor redColor];
-            self.iView.backgroundColor = [UIColor redColor];
+            self.dView.backgroundColor = self.leftColor;
+            self.eView.backgroundColor = self.leftColor;
+            self.fView.backgroundColor = self.leftColor;
+            self.gView.backgroundColor = self.leftColor;
+            self.hView.backgroundColor = self.leftColor;
+            self.iView.backgroundColor = self.leftColor;
             break;
         default:
             break;
@@ -367,39 +402,47 @@
     for (int i =0; i < [resultArray count]; i++) {
         result = [result stringByAppendingString:[NSString stringWithFormat:@"%@", [resultArray objectAtIndex:i]]];
     }
-    
+    NSLog(@"%@", result);
     [self getOLLInformation:result];
 }
 
 -(void)getOLLInformation:(NSString *)binaryString {
    //Based on the current configuration figure out which iteration of the OLL is required
-     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-     NSEntityDescription *entity = [NSEntityDescription entityForName:@"binary" inManagedObjectContext:[[StorageManager sharedManager] managedObjectContext]];
-     [fetchRequest setEntity:entity];
+    NSError *error;
+    NSFetchRequest *binaryRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *binaryEntity = [NSEntityDescription entityForName:@"Binary" inManagedObjectContext:[[StorageManager sharedManager]managedObjectContext]];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"binary == %@", binaryString];
-    [fetchRequest setPredicate:predicate];
-     NSError *error;
-     NSArray *result = [[[StorageManager sharedManager]managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-     
-    NSString *foundOLL = [result objectAtIndex:1];
-    NSString *setUp = [result objectAtIndex:2];
+    [binaryRequest setEntity:binaryEntity];
+    [binaryRequest setPredicate:predicate];
     
+    NSArray *binaryResult = [[[StorageManager sharedManager] managedObjectContext] executeFetchRequest:binaryRequest error:&error];
+    self.thisBinary = [binaryResult objectAtIndex:0];
+    OLL *thisOLL = self.thisBinary.oll;
+    self.selectedOLL = thisOLL;
+    NSLog(@"%@ is the algorithm for this OLL", self.selectedOLL.algorithm);
     
-    NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"OLL" inManagedObjectContext:[[StorageManager sharedManager] managedObjectContext]];
-    [fetchRequest2 setEntity:entity2];
-    NSPredicate *predicate2 = [NSPredicate predicateWithFormat:@"key == %@", foundOLL];
-    [fetchRequest2 setPredicate:predicate2];
-    NSError *error2;
-    NSArray *result2 = [[[StorageManager sharedManager] managedObjectContext] executeFetchRequest:fetchRequest2 error:&error2];
-    
-    self.selectedOLL = [result2 objectAtIndex:0];
-   
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Before you move on" message:[NSString stringWithFormat:@"Complete this prior to moving on: %@", setUp] delegate:nil cancelButtonTitle:@"Done" otherButtonTitles: nil];
-    [alert show];
+    [self showSetupAlert];
     
     [self performSegueWithIdentifier:@"detailSegue" sender:self];
     
+    
+}
+-(void)showSetupAlert{
+    if ([self.thisBinary.setup  isEqualToString: @"0"]) {
+        return;
+    } else if ([self.thisBinary.setup isEqualToString:@"1"]) {
+        //Need to T' to get to desired position
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:@"Before proceeding, please rotate the top face counter clockwise one time" delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
+        [alert show];
+    } else if ([self.thisBinary.setup isEqualToString:@"2"]) {
+        // T2
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:@"Before proceeding, please rotate the top face twice (in either direction)" delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles:nil];
+        [alert show];
+    }else if ([self.thisBinary.setup isEqualToString:@"3"]) {
+        //T
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:@"Before proceeding, please rotate the top face clockwise one time" delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
+        [alert show];
+    }
     
 }
 

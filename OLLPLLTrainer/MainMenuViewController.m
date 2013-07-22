@@ -40,6 +40,13 @@
 }
 
 - (IBAction)OLLPracticePressed:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:@"Bottom"]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Go To Settings" message:@"Please navigate to the settings menu and select your preferred face colors" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [alert show];
+        return;
+    }
+    
     UIViewController *viewController = nil;
     viewController = [[UIStoryboard storyboardWithName:@"OLLStoryboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"InitialView"];
     
