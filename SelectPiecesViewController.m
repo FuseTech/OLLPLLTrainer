@@ -7,6 +7,9 @@
 //
 
 #import "SelectPiecesViewController.h"
+#import "StorageManager.h"
+#import "OLLDetailViewController.h"
+#import "OLL.h"
 
 @interface SelectPiecesViewController ()
 @property (weak, nonatomic) IBOutlet UIView *aView;
@@ -65,6 +68,8 @@
 
 - (IBAction)nextPressed:(id)sender;
 
+@property (nonatomic) OLL *selectedOLL;
+
 
 
 
@@ -113,57 +118,102 @@
 }
 
 - (IBAction)aPressed:(id)sender {
+    if (!self.aTrue) {
     self.aView.backgroundColor = self.faceColor;
     self.aTrue = YES;
+    } else if (self.aTrue) {
+        self.aView.backgroundColor = [UIColor whiteColor];
+        self.aTrue = NO;
+    }
     
     
 }
 
 - (IBAction)bPressed:(id)sender {
-    self.bView.backgroundColor = self.faceColor;
-    self.bTrue = YES;
+    if (!self.bTrue) {
+        self.bView.backgroundColor = self.faceColor;
+        self.bTrue = YES;
+    } else if (self.bTrue) {
+        self.bView.backgroundColor = [UIColor whiteColor];
+        self.bTrue = NO;
+    }
 }
 
 - (IBAction)cPressed:(id)sender {
-    self.cView.backgroundColor = self.faceColor;
-    self.cTrue = YES;
+    if (!self.cTrue) {
+        self.cView.backgroundColor = self.faceColor;
+        self.cTrue = YES;
+    } else if (self.cTrue) {
+        self.cView.backgroundColor = [UIColor whiteColor];
+        self.cTrue = NO;
+    }
 }
 
 - (IBAction)dPressed:(id)sender {
-    self.dView.backgroundColor = self.faceColor;
-    self.dTrue = YES;
+    if (!self.dTrue) {
+        self.dView.backgroundColor = self.faceColor;
+        self.dTrue = YES;
+    } else if (self.dTrue) {
+        self.dView.backgroundColor = [UIColor whiteColor];
+        self.dTrue = NO;
+    }
 }
 
 - (IBAction)ePressed:(id)sender {
-    self.eView.backgroundColor = self.faceColor;
-    self.eTrue = YES;
+    if (!self.eTrue) {
+        self.eView.backgroundColor = self.faceColor;
+        self.eTrue = YES;
+    } else if (self.eTrue) {
+        self.eView.backgroundColor = [UIColor whiteColor];
+        self.eTrue = NO;
+    }
 }
 
 - (IBAction)fPressed:(id)sender {
-    self.fView.backgroundColor = self.faceColor;
-    self.fTrue = YES;
+    if (!self.fTrue) {
+        self.fView.backgroundColor = self.faceColor;
+        self.fTrue = YES;
+    } else if (self.fTrue) {
+        self.fView.backgroundColor = [UIColor whiteColor];
+        self.fTrue = NO;
+    }
 }
 
 - (IBAction)gPressed:(id)sender {
-    self.gView.backgroundColor = self.faceColor;
-    self.gTrue = YES;
+    if (!self.gTrue) {
+        self.gView.backgroundColor = self.faceColor;
+        self.gTrue = YES;
+    } else if (self.gTrue) {
+        self.gView.backgroundColor = [UIColor whiteColor];
+        self.gTrue = NO;
+    }
 }
 
 - (IBAction)hPressed:(id)sender {
-    self.hView.backgroundColor = self.faceColor;
-    self.hTrue = YES;
+    if (!self.hTrue) {
+        self.hView.backgroundColor = self.faceColor;
+        self.hTrue = YES;
+    } else if (self.hTrue) {
+        self.hView.backgroundColor = [UIColor whiteColor];
+        self.hTrue = NO;
+    }
 }
 
 - (IBAction)iPressed:(id)sender {
-    self.iView.backgroundColor = self.faceColor;
-    self.iTrue = YES;
+    if (!self.iTrue) {
+        self.iView.backgroundColor = self.faceColor;
+        self.iTrue = YES;
+    } else if (self.iTrue) {
+        self.iView.backgroundColor = [UIColor whiteColor];
+        self.iTrue = NO;
+    }
 }
 
 - (IBAction)nextPressed:(id)sender {
     if (![self.currentFace isEqualToString: @"Left"]) {
         switch (_face) {
             case 0:
-                [self.topArray insertObject:[NSNumber numberWithBool:self.aTrue] atIndex:0];
+                [self.topArray insertObject:[NSNumber numberWithBool:self.iTrue] atIndex:0];
                 [self.topArray insertObject:[NSNumber numberWithBool:self.bTrue] atIndex:1];
                 [self.topArray insertObject:[NSNumber numberWithBool:self.cTrue] atIndex:2];
                 [self.topArray insertObject:[NSNumber numberWithBool:self.dTrue] atIndex:3];
@@ -317,6 +367,22 @@
     for (int i =0; i < [resultArray count]; i++) {
         result = [result stringByAppendingString:[NSString stringWithFormat:@"%@", [resultArray objectAtIndex:i]]];
     }
-    NSLog(@"%@", result);
+    [self getOLLInformation:result];
+}
+
+-(void)getOLLInformation:(NSString *)OLLKey {
+    
+     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+     NSEntityDescription *entity = [NSEntityDescription entityForName:@"OLL" inManagedObjectContext:[[StorageManager sharedManager] managedObjectContext]];
+     [fetchRequest setEntity:entity];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"binary == %@", OLLKey];
+    [fetchRequest setPredicate:predicate];
+    
+     NSError *error;
+     NSArray *result = [[[StorageManager sharedManager]managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+     
+     self.selectedOLL = [result objectAtIndex:0];
+    
+    
 }
 @end

@@ -36,7 +36,7 @@
         <relationship name="parentPLL" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PLL" inverseName="userPLLData" inverseEntity="PLL" syncable="YES"/>
     </entity>
     <elements>
-        <element name="OLL" positionX="-981" positionY="-711" width="128" height="133"/>
+        <element name="OLL" positionX="-1001" positionY="-733" width="128" height="133"/>
         <element name="PLL" positionX="-983" positionY="-496" width="128" height="118"/>
         <element name="UserOLL" positionX="-729" positionY="-747" width="128" height="163"/>
         <element name="UserPLL" positionX="-722" positionY="-541" width="128" height="163"/>
