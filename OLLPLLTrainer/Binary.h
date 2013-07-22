@@ -11,7 +11,7 @@
 
 @class OLL;
 
-@interface Entity : NSManagedObject
+@interface Binary : NSManagedObject
 
 @property (nonatomic, retain) NSString * binary;
 @property (nonatomic, retain) NSString * key;

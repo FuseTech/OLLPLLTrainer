@@ -10,7 +10,7 @@
 #import "OLL.h"
 
 
-@implementation Entity
+@implementation Binary
 
 @dynamic binary;
 @dynamic key;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3383" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Binary" representedClassName="Entity" syncable="YES">
+    <entity name="Binary" representedClassName="Binary" syncable="YES">
         <attribute name="binary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="setup" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,7 +10,8 @@
         <attribute name="algorithm" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <relationship name="binary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Binary" inverseName="oll" inverseEntity="Binary" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="binary" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Binary" inverseName="oll" inverseEntity="Binary" syncable="YES"/>
         <relationship name="userOLLData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserOLL" inverseName="parentOLL" inverseEntity="UserOLL" syncable="YES"/>
     </entity>
     <entity name="PLL" representedClassName="PLL" syncable="YES">
@@ -41,10 +42,10 @@
         <relationship name="parentPLL" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PLL" inverseName="userPLLData" inverseEntity="PLL" syncable="YES"/>
     </entity>
     <elements>
-        <element name="OLL" positionX="-983" positionY="-733" width="128" height="118"/>
+        <element name="Binary" positionX="-1253" positionY="-778" width="128" height="103"/>
+        <element name="OLL" positionX="-983" positionY="-733" width="128" height="133"/>
         <element name="PLL" positionX="-983" positionY="-496" width="128" height="118"/>
         <element name="UserOLL" positionX="-729" positionY="-747" width="128" height="163"/>
         <element name="UserPLL" positionX="-722" positionY="-541" width="128" height="163"/>
-        <element name="Binary" positionX="-1253" positionY="-778" width="128" height="103"/>
     </elements>
 </model>
