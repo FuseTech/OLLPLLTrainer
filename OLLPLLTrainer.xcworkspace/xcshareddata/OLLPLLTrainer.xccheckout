@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>20F49B7B-99B8-445B-801F-D37BD649A246</string>
+	<key>IDESourceControlProjectName</key>
+	<string>OLLPLLTrainer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>094D3623-AF65-41EB-B838-44F280C77444</key>
+		<string>https://github.com/FuseTech/OLLPLLTrainer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>OLLPLLTrainer.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>094D3623-AF65-41EB-B838-44F280C77444</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/FuseTech/OLLPLLTrainer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>094D3623-AF65-41EB-B838-44F280C77444</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>094D3623-AF65-41EB-B838-44F280C77444</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OLLPLLTrainer</string>
+		</dict>
+	</array>
+</dict>
+</plist>
