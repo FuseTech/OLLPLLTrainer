@@ -1,8 +1,8 @@
 //
 //  OLL.m
-//  OLLPLL
+//  OLLPLLTrainer
 //
-//  Created by Weston Chambers on 7/18/13.
+//  Created by Weston Chambers on 7/21/13.
 //  Copyright (c) 2013 Weston Chambers. All rights reserved.
 //
 
@@ -12,11 +12,9 @@
 
 @implementation OLL
 
-@dynamic image;
 @dynamic algorithm;
-@dynamic key;
-@dynamic notes;
+@dynamic image;
+@dynamic desc;
 @dynamic userOLLData;
-@dynamic binary;
 
 @end

@@ -15,4 +15,9 @@ Pods/Pods.xcodeproj/xcuserdata/FuseTech.xcuserdatad/xcschemes/xcschememanagement
 .DS_Store
 
 *.xcuserstate
+<<<<<<< HEAD
+>>>>>>> Develop
+=======
+
+.DS_Store
 >>>>>>> Develop

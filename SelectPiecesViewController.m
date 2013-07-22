@@ -7,6 +7,9 @@
 //
 
 #import "SelectPiecesViewController.h"
+#import "StorageManager.h"
+#import "OLLDetailViewController.h"
+#import "OLL.h"
 
 @interface SelectPiecesViewController ()
 @property (weak, nonatomic) IBOutlet UIView *aView;
@@ -65,6 +68,8 @@
 
 - (IBAction)nextPressed:(id)sender;
 
+@property (nonatomic) OLL *selectedOLL;
+
 
 
 
@@ -113,50 +118,95 @@
 }
 
 - (IBAction)aPressed:(id)sender {
+    if (!self.aTrue) {
     self.aView.backgroundColor = self.faceColor;
     self.aTrue = YES;
+    } else if (self.aTrue) {
+        self.aView.backgroundColor = [UIColor whiteColor];
+        self.aTrue = NO;
+    }
     
     
 }
 
 - (IBAction)bPressed:(id)sender {
-    self.bView.backgroundColor = self.faceColor;
-    self.bTrue = YES;
+    if (!self.bTrue) {
+        self.bView.backgroundColor = self.faceColor;
+        self.bTrue = YES;
+    } else if (self.bTrue) {
+        self.bView.backgroundColor = [UIColor whiteColor];
+        self.bTrue = NO;
+    }
 }
 
 - (IBAction)cPressed:(id)sender {
-    self.cView.backgroundColor = self.faceColor;
-    self.cTrue = YES;
+    if (!self.cTrue) {
+        self.cView.backgroundColor = self.faceColor;
+        self.cTrue = YES;
+    } else if (self.cTrue) {
+        self.cView.backgroundColor = [UIColor whiteColor];
+        self.cTrue = NO;
+    }
 }
 
 - (IBAction)dPressed:(id)sender {
-    self.dView.backgroundColor = self.faceColor;
-    self.dTrue = YES;
+    if (!self.dTrue) {
+        self.dView.backgroundColor = self.faceColor;
+        self.dTrue = YES;
+    } else if (self.dTrue) {
+        self.dView.backgroundColor = [UIColor whiteColor];
+        self.dTrue = NO;
+    }
 }
 
 - (IBAction)ePressed:(id)sender {
-    self.eView.backgroundColor = self.faceColor;
-    self.eTrue = YES;
+    if (!self.eTrue) {
+        self.eView.backgroundColor = self.faceColor;
+        self.eTrue = YES;
+    } else if (self.eTrue) {
+        self.eView.backgroundColor = [UIColor whiteColor];
+        self.eTrue = NO;
+    }
 }
 
 - (IBAction)fPressed:(id)sender {
-    self.fView.backgroundColor = self.faceColor;
-    self.fTrue = YES;
+    if (!self.fTrue) {
+        self.fView.backgroundColor = self.faceColor;
+        self.fTrue = YES;
+    } else if (self.fTrue) {
+        self.fView.backgroundColor = [UIColor whiteColor];
+        self.fTrue = NO;
+    }
 }
 
 - (IBAction)gPressed:(id)sender {
-    self.gView.backgroundColor = self.faceColor;
-    self.gTrue = YES;
+    if (!self.gTrue) {
+        self.gView.backgroundColor = self.faceColor;
+        self.gTrue = YES;
+    } else if (self.gTrue) {
+        self.gView.backgroundColor = [UIColor whiteColor];
+        self.gTrue = NO;
+    }
 }
 
 - (IBAction)hPressed:(id)sender {
-    self.hView.backgroundColor = self.faceColor;
-    self.hTrue = YES;
+    if (!self.hTrue) {
+        self.hView.backgroundColor = self.faceColor;
+        self.hTrue = YES;
+    } else if (self.hTrue) {
+        self.hView.backgroundColor = [UIColor whiteColor];
+        self.hTrue = NO;
+    }
 }
 
 - (IBAction)iPressed:(id)sender {
-    self.iView.backgroundColor = self.faceColor;
-    self.iTrue = YES;
+    if (!self.iTrue) {
+        self.iView.backgroundColor = self.faceColor;
+        self.iTrue = YES;
+    } else if (self.iTrue) {
+        self.iView.backgroundColor = [UIColor whiteColor];
+        self.iTrue = NO;
+    }
 }
 
 - (IBAction)nextPressed:(id)sender {
@@ -307,7 +357,7 @@
     [resultArray insertObject:[NSNumber numberWithInt:0] atIndex:24];
     
     [self createResultStringWithArray:resultArray];
-    
+    //[self getOLLInformation:@"0001010100011100011001000"];
     
     
 }
@@ -317,6 +367,47 @@
     for (int i =0; i < [resultArray count]; i++) {
         result = [result stringByAppendingString:[NSString stringWithFormat:@"%@", [resultArray objectAtIndex:i]]];
     }
-    NSLog(@"%@", result);
+    
+    [self getOLLInformation:result];
+}
+
+-(void)getOLLInformation:(NSString *)binaryString {
+   //Based on the current configuration figure out which iteration of the OLL is required
+     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+     NSEntityDescription *entity = [NSEntityDescription entityForName:@"binary" inManagedObjectContext:[[StorageManager sharedManager] managedObjectContext]];
+     [fetchRequest setEntity:entity];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"binary == %@", binaryString];
+    [fetchRequest setPredicate:predicate];
+     NSError *error;
+     NSArray *result = [[[StorageManager sharedManager]managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+     
+    NSString *foundOLL = [result objectAtIndex:1];
+    NSString *setUp = [result objectAtIndex:2];
+    
+    
+    NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"OLL" inManagedObjectContext:[[StorageManager sharedManager] managedObjectContext]];
+    [fetchRequest2 setEntity:entity2];
+    NSPredicate *predicate2 = [NSPredicate predicateWithFormat:@"key == %@", foundOLL];
+    [fetchRequest2 setPredicate:predicate2];
+    NSError *error2;
+    NSArray *result2 = [[[StorageManager sharedManager] managedObjectContext] executeFetchRequest:fetchRequest2 error:&error2];
+    
+    self.selectedOLL = [result2 objectAtIndex:0];
+   
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Before you move on" message:[NSString stringWithFormat:@"Complete this prior to moving on: %@", setUp] delegate:nil cancelButtonTitle:@"Done" otherButtonTitles: nil];
+    [alert show];
+    
+    [self performSegueWithIdentifier:@"detailSegue" sender:self];
+    
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"detailSegue"]) {
+        [segue.destinationViewController setDetailOLL:self.selectedOLL];
+        
+    }
+    
 }
 @end

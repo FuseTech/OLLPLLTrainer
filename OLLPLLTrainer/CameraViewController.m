@@ -178,8 +178,8 @@ typedef enum {
     [fetchRequest setEntity:entity];
     [fetchRequest setPredicate:predicate];
     
-    NSError *error;
-    NSArray *result = [[StorageManager sharedManager].managedObjectContext executeFetchRequest:fetchRequest error:&error];
+  //  NSError *error;
+  //  NSArray *result = [[StorageManager sharedManager].managedObjectContext executeFetchRequest:fetchRequest error:&error];
    // self.foundOLL = [result objectAtIndex:0];
     [self performSegueWithIdentifier:@"detail" sender:self];
     
