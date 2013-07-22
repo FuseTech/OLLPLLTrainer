@@ -2,3 +2,22 @@
 OLLPLLTrainer.xcodeproj/xcuserdata/FuseTech.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 
 *.xcbkptlist
+
+<<<<<<< HEAD
+Pods/Pods.xcodeproj/xcuserdata/FuseTech.xcuserdatad/xcschemes/xcschememanagement.plist
+
+*.plist
+
+*.xcuserstate
+
+.DS_Store
+=======
+.DS_Store
+
+*.xcuserstate
+<<<<<<< HEAD
+>>>>>>> Develop
+=======
+
+.DS_Store
+>>>>>>> Develop
