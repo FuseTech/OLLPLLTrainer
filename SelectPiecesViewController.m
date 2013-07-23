@@ -115,7 +115,24 @@
     self.rightArray = [[NSMutableArray alloc] init];
     self.backArray = [[NSMutableArray alloc] init];
     self.leftArray = [[NSMutableArray alloc] init];
-   
+    
+    self.eView.backgroundColor = self.botColor;
+    self.eButton.enabled = NO;
+    self.eTrue = YES;
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Let's do this" message:[NSString stringWithFormat:@"With %@ facing you, select all pieces on the top face that are %@", [defaults objectForKey:@"Front"], [defaults objectForKey:@"Bottom"]] delegate:nil cancelButtonTitle:@"I'm on it" otherButtonTitles: nil];
+    [alert show];
+    /*
+    NSFetchRequest *testRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"OLL" inManagedObjectContext:[[StorageManager sharedManager]managedObjectContext]];
+    [testRequest setEntity:entity];
+    NSArray *testArray = [[StorageManager sharedManager].managedObjectContext executeFetchRequest:testRequest error:nil];
+    
+    for (OLL *info in testArray) {
+        NSLog(@"%@", info.key);
+    }
+     */
+    
+
 }
 
 -(UIColor *)colorFromString:(NSString *)colorString {
@@ -392,7 +409,7 @@
     [resultArray insertObject:[NSNumber numberWithInt:0] atIndex:24];
     
     [self createResultStringWithArray:resultArray];
-    //[self getOLLInformation:@"0001010100011100011001000"];
+  
     
     
 }
@@ -407,6 +424,7 @@
 }
 
 -(void)getOLLInformation:(NSString *)binaryString {
+    
    //Based on the current configuration figure out which iteration of the OLL is required
     NSError *error;
     NSFetchRequest *binaryRequest = [[NSFetchRequest alloc] init];
@@ -435,19 +453,23 @@
     
 }
 -(void)showSetupAlert{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    
     if ([self.thisBinary.setup  isEqualToString: @"0"]) {
-        return;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Go Time" message:[NSString stringWithFormat:@"Before proceeding, be sure to have %@ facing you", [defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [alert show];
     } else if ([self.thisBinary.setup isEqualToString:@"1"]) {
         //Need to T' to get to desired position
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:@"Before proceeding, please rotate the top face counter clockwise one time" delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Before Proceeding..." message:[NSString stringWithFormat:@"Ensure %@ is in front of you and perform: T'", [defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
         [alert show];
     } else if ([self.thisBinary.setup isEqualToString:@"2"]) {
         // T2
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:@"Before proceeding, please rotate the top face twice (in either direction)" delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Before Proceeding..." message:[NSString stringWithFormat:@"Ensure %@ is in front of you and perform: T2",[defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles:nil];
         [alert show];
     }else if ([self.thisBinary.setup isEqualToString:@"3"]) {
         //T
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:@"Before proceeding, please rotate the top face clockwise one time" delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Before Proceeding..." message:[NSString stringWithFormat:@"Ensure %@ is in front of you and perform: T",[defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
         [alert show];
     }
     
@@ -462,7 +484,8 @@
 }
 
 -(void)startOver {
-    //Figure out how to restart, or even go backwards to modify changed pieces. Currently ahve to navigate back to main menu. 
+    //Figure out how to restart, or even go backwards to modify changed pieces. Currently ahve to navigate back to main menu.
+    NSLog(@"How to start fresh...");
     
 }
 @end
