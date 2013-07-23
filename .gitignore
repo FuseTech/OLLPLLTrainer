@@ -23,3 +23,5 @@ Pods/Pods.xcodeproj/xcuserdata/FuseTech.xcuserdatad/xcschemes/xcschememanagement
 >>>>>>> Develop
 
 *.xcbkptlist
+
+*.xcuserstate
