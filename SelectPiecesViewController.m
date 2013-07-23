@@ -119,7 +119,8 @@
     self.eView.backgroundColor = self.botColor;
     self.eButton.enabled = NO;
     self.eTrue = YES;
-    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Let's do this" message:[NSString stringWithFormat:@"With %@ facing you, select all pieces on the top face that are %@", [defaults objectForKey:@"Front"], [defaults objectForKey:@"Bottom"]] delegate:nil cancelButtonTitle:@"I'm on it" otherButtonTitles: nil];
+    [alert show];
     /*
     NSFetchRequest *testRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"OLL" inManagedObjectContext:[[StorageManager sharedManager]managedObjectContext]];

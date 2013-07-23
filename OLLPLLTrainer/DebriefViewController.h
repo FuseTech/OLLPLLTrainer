@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class OLL;
 
 @interface DebriefViewController : UIViewController
 @property (nonatomic) BOOL succeeded;
+@property (nonatomic, strong) OLL *completedOLL;
 
 @end

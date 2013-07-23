@@ -9,6 +9,7 @@
 #import "DebriefViewController.h"
 
 @interface DebriefViewController ()
+- (IBAction)donePressed:(id)sender;
 
 @end
 
@@ -27,6 +28,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    if (self.succeeded) {
+        self.title = @"Good job!";
+    } else {
+        self.title = @"A valiant attempt!";
+    }
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +45,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)donePressed:(id)sender {
+    
+     
+  //[self performSegueWithIdentifier:@"doneDebriefingSegue" sender:self];
+   
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"doneDebriefingSegue"]) {
+       // [self dismissViewControllerAnimated:YES completion:nil];
+        
+    }
+}
 @end
