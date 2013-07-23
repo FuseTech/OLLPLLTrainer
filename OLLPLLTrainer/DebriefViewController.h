@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DebriefViewController : UIViewController
+@property (nonatomic) BOOL succeeded;
 
 @end
