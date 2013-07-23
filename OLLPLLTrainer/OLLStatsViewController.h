@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class UserOLL;
 
 @interface OLLStatsViewController : UIViewController
-
+@property (nonatomic, weak) UserOLL *OLLStats;
 @end
