@@ -435,19 +435,22 @@
     
 }
 -(void)showSetupAlert{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    
     if ([self.thisBinary.setup  isEqualToString: @"0"]) {
         return;
     } else if ([self.thisBinary.setup isEqualToString:@"1"]) {
         //Need to T' to get to desired position
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:@"Before proceeding, please rotate the top face counter clockwise one time" delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:[NSString stringWithFormat:@"Before proceeding hold the %@ face in front and perform: T'", [defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
         [alert show];
     } else if ([self.thisBinary.setup isEqualToString:@"2"]) {
         // T2
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:@"Before proceeding, please rotate the top face twice (in either direction)" delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:[NSString stringWithFormat:@"Before proceeding, hold the %@ face in front of you, and perform: T2",[defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles:nil];
         [alert show];
     }else if ([self.thisBinary.setup isEqualToString:@"3"]) {
         //T
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:@"Before proceeding, please rotate the top face clockwise one time" delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:[NSString stringWithFormat:@"Before proceeding, hold the %@ face in front of you and perform: T",[defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
         [alert show];
     }
     
@@ -462,7 +465,8 @@
 }
 
 -(void)startOver {
-    //Figure out how to restart, or even go backwards to modify changed pieces. Currently ahve to navigate back to main menu. 
+    //Figure out how to restart, or even go backwards to modify changed pieces. Currently ahve to navigate back to main menu.
+    NSLog(@"How to start fresh...");
     
 }
 @end
