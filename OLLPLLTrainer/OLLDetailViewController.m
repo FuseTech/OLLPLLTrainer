@@ -61,9 +61,9 @@
         int pass = [self.detailOLL.userOLLData.numSolves intValue];
         int attempts = [self.detailOLL.userOLLData.numAttempts intValue];
         float percentage = (((float) pass) / attempts);
-        self.successPercentageLabel.text = [NSString stringWithFormat:@"%f", percentage];
+        self.successPercentageLabel.text = [NSString stringWithFormat:@"%%%.2f success rate", percentage *100];
     }
-    self.OLLimageView.image = [self getImageFromString:self.detailOLL.key];
+    self.OLLimageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.gif",self.detailOLL.key]];
     
     
                             
@@ -71,10 +71,7 @@
 
 }
 
--(UIImage *)getImageFromString:(NSString *)key {
-    UIImage *theImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.gif",self.detailOLL.key]];
-    return theImage;
-}
+
 
 - (void)didReceiveMemoryWarning
 {

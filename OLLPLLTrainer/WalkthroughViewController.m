@@ -82,8 +82,8 @@
         actionSheet.tag = 1;
         [actionSheet showInView:self.view];
         return;
-                                      
     }
+    
     [self showNextDirective];
 }
 
