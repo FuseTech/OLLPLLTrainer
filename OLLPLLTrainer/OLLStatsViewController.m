@@ -7,6 +7,7 @@
 //
 
 #import "OLLStatsViewController.h"
+#import "UserOLL.h"
 
 @interface OLLStatsViewController ()
 
