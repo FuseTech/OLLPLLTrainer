@@ -7,8 +7,11 @@
 //
 
 #import "WalkthroughViewController.h"
+#import "OLL.h"
 
 @interface WalkthroughViewController ()
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+@property (weak, nonatomic) IBOutlet UILabel *directiveLabel;
 
 @end
 

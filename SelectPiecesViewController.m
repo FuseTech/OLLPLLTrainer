@@ -115,7 +115,23 @@
     self.rightArray = [[NSMutableArray alloc] init];
     self.backArray = [[NSMutableArray alloc] init];
     self.leftArray = [[NSMutableArray alloc] init];
-   
+    
+    self.eView.backgroundColor = self.botColor;
+    self.eButton.enabled = NO;
+    self.eTrue = YES;
+    
+    /*
+    NSFetchRequest *testRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"OLL" inManagedObjectContext:[[StorageManager sharedManager]managedObjectContext]];
+    [testRequest setEntity:entity];
+    NSArray *testArray = [[StorageManager sharedManager].managedObjectContext executeFetchRequest:testRequest error:nil];
+    
+    for (OLL *info in testArray) {
+        NSLog(@"%@", info.key);
+    }
+     */
+    
+
 }
 
 -(UIColor *)colorFromString:(NSString *)colorString {
@@ -392,7 +408,7 @@
     [resultArray insertObject:[NSNumber numberWithInt:0] atIndex:24];
     
     [self createResultStringWithArray:resultArray];
-    //[self getOLLInformation:@"0001010100011100011001000"];
+  
     
     
 }
@@ -407,6 +423,7 @@
 }
 
 -(void)getOLLInformation:(NSString *)binaryString {
+    
    //Based on the current configuration figure out which iteration of the OLL is required
     NSError *error;
     NSFetchRequest *binaryRequest = [[NSFetchRequest alloc] init];
@@ -439,18 +456,19 @@
     
     
     if ([self.thisBinary.setup  isEqualToString: @"0"]) {
-        return;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Go Time" message:[NSString stringWithFormat:@"Before proceeding, be sure to have %@ facing you", [defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [alert show];
     } else if ([self.thisBinary.setup isEqualToString:@"1"]) {
         //Need to T' to get to desired position
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:[NSString stringWithFormat:@"Before proceeding hold the %@ face in front and perform: T'", [defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Before Proceeding..." message:[NSString stringWithFormat:@"Ensure %@ is in front of you and perform: T'", [defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
         [alert show];
     } else if ([self.thisBinary.setup isEqualToString:@"2"]) {
         // T2
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:[NSString stringWithFormat:@"Before proceeding, hold the %@ face in front of you, and perform: T2",[defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Before Proceeding..." message:[NSString stringWithFormat:@"Ensure %@ is in front of you and perform: T2",[defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles:nil];
         [alert show];
     }else if ([self.thisBinary.setup isEqualToString:@"3"]) {
         //T
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set up" message:[NSString stringWithFormat:@"Before proceeding, hold the %@ face in front of you and perform: T",[defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Before Proceeding..." message:[NSString stringWithFormat:@"Ensure %@ is in front of you and perform: T",[defaults objectForKey:@"Front"]] delegate:nil cancelButtonTitle:@"Done!" otherButtonTitles: nil];
         [alert show];
     }
     

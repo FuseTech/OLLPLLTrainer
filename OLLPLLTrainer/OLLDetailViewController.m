@@ -9,6 +9,8 @@
 #import "OLLDetailViewController.h"
 #import "OLL.h"
 #import "StorageManager.h"
+#import "OLLStatsViewController.h"
+#import "WalkthroughViewController.h"
 
 @interface OLLDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *OLLimageView;
@@ -50,11 +52,17 @@
         //Currently no userOLL for this OLL, create one
         self.myStatsButton.hidden = YES;
     }
+    self.OLLimageView.image = [self getImageFromString:self.detailOLL.key];
     
     
                             
     
 
+}
+
+-(UIImage *)getImageFromString:(NSString *)key {
+    UIImage *theImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.gif",self.detailOLL.key]];
+    return theImage;
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,8 +76,9 @@
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"statsSegue"]) {
-        [segue.destinationViewController setUserOLLData:self.userOLLData];
-        
+        [segue.destinationViewController setOLLStats:self.userOLLData];
+    } else if ([[segue identifier] isEqualToString:@"walkthroughSegue"]) {
+        [segue.destinationViewController setTheOLL:self.detailOLL];
     }
     
 }

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class OLL;
 
 @interface WalkthroughViewController : UIViewController
+@property (nonatomic, strong) OLL *theOLL;
 
 @end
