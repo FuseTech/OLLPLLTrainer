@@ -402,7 +402,7 @@
     for (int i =0; i < [resultArray count]; i++) {
         result = [result stringByAppendingString:[NSString stringWithFormat:@"%@", [resultArray objectAtIndex:i]]];
     }
-    NSLog(@"%@", result);
+  
     [self getOLLInformation:result];
 }
 
@@ -416,10 +416,17 @@
     [binaryRequest setPredicate:predicate];
     
     NSArray *binaryResult = [[[StorageManager sharedManager] managedObjectContext] executeFetchRequest:binaryRequest error:&error];
+    if ([binaryResult count] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to analyze" message:@"Pieces were either entered incorrectly, or Noob Cube does not currently have data for that OLL. Please try again" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        [alert show];
+        [self startOver];
+        return;
+        
+    }
     self.thisBinary = [binaryResult objectAtIndex:0];
     OLL *thisOLL = self.thisBinary.oll;
     self.selectedOLL = thisOLL;
-    NSLog(@"%@ is the algorithm for this OLL", self.selectedOLL.algorithm);
+    
     
     [self showSetupAlert];
     
@@ -451,6 +458,11 @@
         [segue.destinationViewController setDetailOLL:self.selectedOLL];
         
     }
+    
+}
+
+-(void)startOver {
+    //Figure out how to restart, or even go backwards to modify changed pieces. Currently ahve to navigate back to main menu. 
     
 }
 @end
