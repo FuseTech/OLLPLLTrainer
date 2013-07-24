@@ -204,6 +204,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="OLLimageView" destination="KX4-TE-If1" id="bDA-59-gey"/>
+                        <outlet property="arbitraryLabel" destination="9Ce-HA-f7t" id="gJS-Df-kkc"/>
                         <outlet property="confidenceRatingLabel" destination="fyS-DD-fHg" id="e0C-x3-weh"/>
                         <outlet property="myStatsButton" destination="81s-ED-FlV" id="Fhf-vX-glO"/>
                         <outlet property="ollIdentifierLabel" destination="5eD-QK-snK" id="fSa-eQ-Zpi"/>
@@ -306,6 +307,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pS3-ml-JB8" id="2O0-lC-luv"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wins:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYJ-cS-idA">
                                 <rect key="frame" x="20" y="100" width="43" height="21"/>
@@ -330,7 +334,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pS3-ml-JB8" id="ugZ-6h-em4"/>
+                                </connections>
                             </textView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2.5" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="mcN-N5-3Cw">
                                 <rect key="frame" x="33" y="423" width="255" height="29"/>

@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *ollIdentifierLabel;
 @property (weak, nonatomic) IBOutlet UILabel *successPercentageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *confidenceRatingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *arbitraryLabel;
 
 @property (weak, nonatomic) UserOLL *userOLLData;
 @property (weak, nonatomic) IBOutlet UIButton *myStatsButton;
@@ -53,9 +54,14 @@
         self.myStatsButton.hidden = YES;
         self.confidenceRatingLabel.hidden = YES;
         self.successPercentageLabel.hidden = YES;
+        self.arbitraryLabel.hidden = YES;
         self.ollIdentifierLabel.text = self.detailOLL.desc;
     } else {
-        self.ollIdentifierLabel.text = self.detailOLL.userOLLData.userKey;
+        if (self.detailOLL.userOLLData.userKey) {
+            self.ollIdentifierLabel.text = self.detailOLL.userOLLData.userKey;
+        } else {
+            self.ollIdentifierLabel.text = self.detailOLL.desc;
+        }
         self.confidenceRatingLabel.text = [NSString stringWithFormat:@"%.2f",[self.userOLLData.confidenceRating floatValue]];
         //calculate success percentage
         int pass = [self.detailOLL.userOLLData.numSolves intValue];
