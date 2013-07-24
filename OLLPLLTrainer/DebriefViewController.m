@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *successLabel;
 @property (weak, nonatomic) IBOutlet UILabel *attemptsLabel;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navBarTitle;
 
 - (IBAction)confidenceSliderChanged:(id)sender;
 @end
@@ -52,25 +54,40 @@
         }
         theUsersOLL.confidenceRating = [NSNumber numberWithInt:0];
         theUsersOLL.parentOLL = self.completedOLL;
-        
-        self.identifierTextField.text = self.completedOLL.desc;
+
         NSError *error;
         if(![[StorageManager sharedManager].managedObjectContext save:&error]){
             NSLog(@"Error saving UserOLL");
         }
     }
+    if (self.succeeded) {
+        int newSolves = [self.completedOLL.userOLLData.numSolves intValue];
+        newSolves++;
+        self.completedOLL.userOLLData.numSolves = [NSNumber numberWithInt:newSolves];
+        self.navBarTitle.title = @"Good job!";
+    } else {
+        self.navBarTitle.title = @"A valiant attempt!";
+    }
+    int newAttempts = [self.completedOLL.userOLLData.numAttempts intValue];
+    newAttempts ++;
+    self.completedOLL.userOLLData.numAttempts = [NSNumber numberWithInt:newAttempts];
+    
     self.successLabel.text = [NSString stringWithFormat:@"%@", self.completedOLL.userOLLData.numSolves];
     self.attemptsLabel.text = [NSString stringWithFormat:@"%@", self.completedOLL.userOLLData.numAttempts];
     int pass = [self.completedOLL.userOLLData.numSolves intValue];
     int attempts = [self.completedOLL.userOLLData.numAttempts intValue];
     float percentage = (((float) pass) / attempts);
     self.percentageLabel.text = [NSString stringWithFormat:@"%.2f", percentage*100];
-    if (self.succeeded) {
-        self.title = @"Good job!";
-    } else {
-        self.title = @"A valiant attempt!";
-    }
     self.ollImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.gif",self.completedOLL.key]];
+    if (![self.completedOLL.userOLLData.userKey isEqualToString:@""]) {
+        self.identifierTextField.text = self.completedOLL.userOLLData.userKey;
+    } else {
+        self.identifierTextField.text = self.completedOLL.desc;
+    }
+    self.confidenceLabel.text = [NSString stringWithFormat:@"%.2f",[self.completedOLL.userOLLData.confidenceRating floatValue]];
+    self.confidenceSlider.value = [self.completedOLL.userOLLData.confidenceRating floatValue];
+    
+    
     
     
     
@@ -100,9 +117,14 @@
         self.completedOLL.userOLLData.confidenceRating = [NSNumber numberWithFloat:self.confidenceSlider.value];
         
         
+        
     }
 }
 - (IBAction)confidenceSliderChanged:(id)sender {
-    self.confidenceLabel.text = [NSString stringWithFormat:@"%f", self.confidenceSlider.value];
+    self.confidenceLabel.text = [NSString stringWithFormat:@"%.2f", self.confidenceSlider.value];
+}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 @end

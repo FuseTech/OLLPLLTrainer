@@ -56,12 +56,14 @@
         self.ollIdentifierLabel.text = self.detailOLL.desc;
     } else {
         self.ollIdentifierLabel.text = self.detailOLL.userOLLData.userKey;
-        self.confidenceRatingLabel.text = [NSString stringWithFormat:@"%@",self.userOLLData.confidenceRating];
+        self.confidenceRatingLabel.text = [NSString stringWithFormat:@"%.2f",[self.userOLLData.confidenceRating floatValue]];
         //calculate success percentage
         int pass = [self.detailOLL.userOLLData.numSolves intValue];
+       
         int attempts = [self.detailOLL.userOLLData.numAttempts intValue];
+    
         float percentage = (((float) pass) / attempts);
-        self.successPercentageLabel.text = [NSString stringWithFormat:@"%%%.2f success rate", percentage *100];
+        self.successPercentageLabel.text = [NSString stringWithFormat:@"%%%.2f Boss rate", percentage * 100];
     }
     self.OLLimageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.gif",self.detailOLL.key]];
     
