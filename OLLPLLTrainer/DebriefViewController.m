@@ -79,10 +79,10 @@
     float percentage = (((float) pass) / attempts);
     self.percentageLabel.text = [NSString stringWithFormat:@"%.2f", percentage*100];
     self.ollImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.gif",self.completedOLL.key]];
-    if (![self.completedOLL.userOLLData.userKey isEqualToString:@""]) {
-        self.identifierTextField.text = self.completedOLL.userOLLData.userKey;
-    } else {
+    if (!self.completedOLL.userOLLData.userKey) {
         self.identifierTextField.text = self.completedOLL.desc;
+    } else {
+        self.identifierTextField.text = self.completedOLL.userOLLData.userKey;
     }
     self.confidenceLabel.text = [NSString stringWithFormat:@"%.2f",[self.completedOLL.userOLLData.confidenceRating floatValue]];
     self.confidenceSlider.value = [self.completedOLL.userOLLData.confidenceRating floatValue];
@@ -126,5 +126,25 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
+}
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        [UIView beginAnimations:Nil context:NULL];
+        [UIView setAnimationDuration:.15];
+        self.view.frame = CGRectMake(0, 0, 320, 480);
+        [UIView commitAnimations];
+    }
+    return YES;
+}
+-(void)textViewDidBeginEditing:(UITextView *)textView {
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:.3];
+    self.view.frame = CGRectMake(0, -200, 320, 480);
+    
+    [UIView commitAnimations];
+    
 }
 @end
